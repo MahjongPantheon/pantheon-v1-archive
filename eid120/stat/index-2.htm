@@ -1,0 +1,871 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Рейтинг - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid120.html" class="nav-link">Сейхоку, 3 сезон</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style>
+    .rating-flex-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .players-options{
+      margin-left: 40px;
+    }
+    .row-min-was-played:nth-of-type(even) {
+        background-color: rgba(0, 255, 129, 0.12);
+    }
+    .row-min-was-played:nth-of-type(odd) {
+        background-color: rgba(96, 201, 149, 0.27) !important;
+    }
+</style>
+
+<script>
+    function onChange(showPlayers) {
+      let href = new URL(location.href);
+      href.searchParams.set('players', showPlayers);
+      location.href=href;
+    }
+</script>
+
+<div class="rating-flex-title">
+  <h3>Рейтинг</h3>
+    <div class="players-options">
+      <select class="form-control" size="1" onchange="onChange(this.value)">
+          <option value="all" selected="selected">Все игроки</option>
+          <option value="min-played">Сыгравшие хотя бы 40 игр</option>
+          <option value="min-not-played">Сыгравшие менее 40 игр</option>
+      </select>
+    </div>
+</div>
+<br>
+
+
+
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>#</th>
+            <th><a href="index.htm?sort=name">Игрок</a></th>
+            <th><a href="index-1.htm?sort=rating">Рейтинговые очки</a></th>
+            <th><a href="index-2.htm?sort=avg_place">Среднее место</a><span class="icon-arrow-up"></span></th>
+            <th><a href="index-3.htm?sort=avg_score">Средние очки</a></th>
+            <th>Сыграно игр</th>
+        </tr>
+        <tr class="">
+            <td>1</td>
+            <td><a href="../user/525.html">Голованова Анастасия</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">64500</span></td>
+            <td>1</td>
+            <td>64500</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>2</td>
+            <td><a href="../user/434.html">Поносов Никита</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">46700</span></td>
+            <td>1</td>
+            <td>46700</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>3</td>
+            <td><a href="../user/349.html">Нагорная Екатерина</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">40800</span></td>
+            <td>1</td>
+            <td>40800</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>4</td>
+            <td><a href="../user/287.html">Зайчиков Дмитрий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">137900</span></td>
+            <td>1.3333</td>
+            <td>45967</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>5</td>
+            <td><a href="../user/817.html">Подлипаев Сергей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">65900</span></td>
+            <td>1.6667</td>
+            <td>21967</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>6</td>
+            <td><a href="../user/271.html">Титов Артем</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">222600</span></td>
+            <td>1.9</td>
+            <td>22260</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>7</td>
+            <td><a href="../user/686.html">Миськевич Роман</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">47200</span></td>
+            <td>2</td>
+            <td>15733</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>8</td>
+            <td><a href="../user/19.html">Карасюк Павел</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">42800</span></td>
+            <td>2</td>
+            <td>14267</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>9</td>
+            <td><a href="../user/759.html">Круглова Александра</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">22700</span></td>
+            <td>2</td>
+            <td>22700</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>10</td>
+            <td><a href="../user/320.html">Петров Юрий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">18200</span></td>
+            <td>2</td>
+            <td>18200</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>11</td>
+            <td><a href="../user/561.html">Грег Эдмонд</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">17600</span></td>
+            <td>2</td>
+            <td>17600</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>12</td>
+            <td><a href="../user/425.html">Гладышев Сергей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">14900</span></td>
+            <td>2</td>
+            <td>14900</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>13</td>
+            <td><a href="../user/407.html">Скипор Владимир</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">9200</span></td>
+            <td>2</td>
+            <td>3067</td>
+            <td>3</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>14</td>
+            <td><a href="../user/262.html">Максимов Андрей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">914200</span></td>
+            <td>2.1771</td>
+            <td>9523</td>
+            <td>96</td>
+        </tr>
+        <tr class="">
+            <td>15</td>
+            <td><a href="../user/374.html">Чекан Викмар </a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">33100</span></td>
+            <td>2.2222</td>
+            <td>3678</td>
+            <td>9</td>
+        </tr>
+        <tr class="">
+            <td>16</td>
+            <td><a href="../user/373.html">Рунова Михаэла </a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">50500</span></td>
+            <td>2.2857</td>
+            <td>7214</td>
+            <td>7</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>17</td>
+            <td><a href="../user/289.html">Ширшов Александр</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">205600</span></td>
+            <td>2.2927</td>
+            <td>5015</td>
+            <td>41</td>
+        </tr>
+        <tr class="">
+            <td>18</td>
+            <td><a href="../user/246.html">Иванов Георгий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">30900</span></td>
+            <td>2.3</td>
+            <td>3090</td>
+            <td>10</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>19</td>
+            <td><a href="../user/221.html">Новиков Дмитрий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">1079700</span></td>
+            <td>2.3099</td>
+            <td>6314</td>
+            <td>171</td>
+        </tr>
+        <tr class="">
+            <td>20</td>
+            <td><a href="../user/286.html">Мамин Владислав</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">116000</span></td>
+            <td>2.3333</td>
+            <td>3515</td>
+            <td>33</td>
+        </tr>
+        <tr class="">
+            <td>21</td>
+            <td><a href="../user/309.html">Наданьян Владимир</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">22000</span></td>
+            <td>2.3333</td>
+            <td>7333</td>
+            <td>3</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>22</td>
+            <td><a href="../user/217.html">Новиков Антон</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">555300</span></td>
+            <td>2.376</td>
+            <td>4442</td>
+            <td>125</td>
+        </tr>
+        <tr class="">
+            <td>23</td>
+            <td><a href="../user/230.html">Алешин Сергей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">5700</span></td>
+            <td>2.3846</td>
+            <td>438</td>
+            <td>13</td>
+        </tr>
+        <tr class="">
+            <td>24</td>
+            <td><a href="../user/264.html">Быков Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-14200</span></td>
+            <td>2.4</td>
+            <td>-2840</td>
+            <td>5</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>25</td>
+            <td><a href="../user/347.html">Ли Дмитрий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">134500</span></td>
+            <td>2.403</td>
+            <td>2007</td>
+            <td>67</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>26</td>
+            <td><a href="../user/363.html">Безуглова Анастасия</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">120000</span></td>
+            <td>2.4242</td>
+            <td>1818</td>
+            <td>66</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>27</td>
+            <td><a href="../user/252.html">Хромов Кирилл</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">291400</span></td>
+            <td>2.4329</td>
+            <td>1777</td>
+            <td>164</td>
+        </tr>
+        <tr class="">
+            <td>28</td>
+            <td><a href="../user/220.html">Леонтьев Алексей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">78800</span></td>
+            <td>2.4444</td>
+            <td>8756</td>
+            <td>9</td>
+        </tr>
+        <tr class="">
+            <td>29</td>
+            <td><a href="../user/248.html">Ланцов Андрей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">3400</span></td>
+            <td>2.4444</td>
+            <td>378</td>
+            <td>9</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>30</td>
+            <td><a href="../user/235.html">Алексеева Ольга</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">299800</span></td>
+            <td>2.4571</td>
+            <td>1713</td>
+            <td>175</td>
+        </tr>
+        <tr class="">
+            <td>31</td>
+            <td><a href="../user/806.html">Саламатов Владислав</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">15000</span></td>
+            <td>2.5</td>
+            <td>7500</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>32</td>
+            <td><a href="../user/356.html">Толочный Николай</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-16600</span></td>
+            <td>2.5</td>
+            <td>-519</td>
+            <td>32</td>
+        </tr>
+        <tr class="">
+            <td>33</td>
+            <td><a href="../user/261.html">Фадина Елена</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-34800</span></td>
+            <td>2.5</td>
+            <td>-1933</td>
+            <td>18</td>
+        </tr>
+        <tr class="">
+            <td>34</td>
+            <td><a href="../user/355.html">Сычев Иван</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-87400</span></td>
+            <td>2.5357</td>
+            <td>-3121</td>
+            <td>28</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>35</td>
+            <td><a href="../user/360.html">Сорокин Павел</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-123200</span></td>
+            <td>2.5536</td>
+            <td>-2200</td>
+            <td>56</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>36</td>
+            <td><a href="../user/298.html">Логинова Юлия</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-145200</span></td>
+            <td>2.5684</td>
+            <td>-1528</td>
+            <td>95</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>37</td>
+            <td><a href="../user/238.html">Горячева Елена</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-56500</span></td>
+            <td>2.5804</td>
+            <td>-504</td>
+            <td>112</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>38</td>
+            <td><a href="../user/352.html">Погосян Тамара</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-252000</span></td>
+            <td>2.6111</td>
+            <td>-4667</td>
+            <td>54</td>
+        </tr>
+        <tr class="">
+            <td>39</td>
+            <td><a href="../user/345.html">Кузин Александр</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-201000</span></td>
+            <td>2.6486</td>
+            <td>-5432</td>
+            <td>37</td>
+        </tr>
+        <tr class="">
+            <td>40</td>
+            <td><a href="../user/225.html">Плясунов Владислав</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-26400</span></td>
+            <td>2.65</td>
+            <td>-1320</td>
+            <td>20</td>
+        </tr>
+        <tr class="">
+            <td>41</td>
+            <td><a href="../user/234.html">Абрашкин Олег</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-31200</span></td>
+            <td>2.6667</td>
+            <td>-10400</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>42</td>
+            <td><a href="../user/17.html">Гончаренко Александр</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-66100</span></td>
+            <td>2.6667</td>
+            <td>-5508</td>
+            <td>12</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>43</td>
+            <td><a href="../user/676.html">Ларцева Ольга</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-182900</span></td>
+            <td>2.6905</td>
+            <td>-4355</td>
+            <td>42</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>44</td>
+            <td><a href="../user/548.html">Калинин Сергей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-199600</span></td>
+            <td>2.7143</td>
+            <td>-4752</td>
+            <td>42</td>
+        </tr>
+        <tr class="">
+            <td>45</td>
+            <td><a href="../user/280.html">Коновалов Михаил</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-196600</span></td>
+            <td>2.7391</td>
+            <td>-8548</td>
+            <td>23</td>
+        </tr>
+        <tr class="">
+            <td>46</td>
+            <td><a href="../user/403.html">Цой Валентин</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-68900</span></td>
+            <td>2.75</td>
+            <td>-5742</td>
+            <td>12</td>
+        </tr>
+        <tr class="">
+            <td>47</td>
+            <td><a href="../user/748.html">Комратов Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-75100</span></td>
+            <td>2.75</td>
+            <td>-9388</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>48</td>
+            <td><a href="../user/272.html">Титова Анна</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-107100</span></td>
+            <td>2.7692</td>
+            <td>-8238</td>
+            <td>13</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>49</td>
+            <td><a href="../user/39.html">Клименко Олег</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-438100</span></td>
+            <td>2.7692</td>
+            <td>-8425</td>
+            <td>52</td>
+        </tr>
+        <tr class="">
+            <td>50</td>
+            <td><a href="../user/32.html">Козловская Яна</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-88000</span></td>
+            <td>2.7778</td>
+            <td>-9778</td>
+            <td>9</td>
+        </tr>
+        <tr class="">
+            <td>51</td>
+            <td><a href="../user/40.html">Ким София</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-186200</span></td>
+            <td>2.7857</td>
+            <td>-13300</td>
+            <td>14</td>
+        </tr>
+        <tr class="">
+            <td>52</td>
+            <td><a href="../user/666.html">Богаевский Никита</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-60200</span></td>
+            <td>2.8</td>
+            <td>-12040</td>
+            <td>5</td>
+        </tr>
+        <tr class="">
+            <td>53</td>
+            <td><a href="../user/1081.html">Коженов Сергей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-93500</span></td>
+            <td>2.8182</td>
+            <td>-8500</td>
+            <td>11</td>
+        </tr>
+        <tr class="row-min-was-played">
+            <td>54</td>
+            <td><a href="../user/335.html">Громова Елена</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-683800</span></td>
+            <td>2.8269</td>
+            <td>-13150</td>
+            <td>52</td>
+        </tr>
+        <tr class="">
+            <td>55</td>
+            <td><a href="../user/669.html">Кавун Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-179000</span></td>
+            <td>2.9</td>
+            <td>-17900</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>56</td>
+            <td><a href="../user/458.html">Вагапова Айгуль</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-170200</span></td>
+            <td>2.9091</td>
+            <td>-15473</td>
+            <td>11</td>
+        </tr>
+        <tr class="">
+            <td>57</td>
+            <td><a href="../user/386.html">Матвеев Сергей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-580000</span></td>
+            <td>2.9459</td>
+            <td>-15676</td>
+            <td>37</td>
+        </tr>
+        <tr class="">
+            <td>58</td>
+            <td><a href="../user/290.html">Петрущенко Сергей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-18000</span></td>
+            <td>3</td>
+            <td>-18000</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>59</td>
+            <td><a href="../user/1124.html">Антипов Павел</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-21600</span></td>
+            <td>3</td>
+            <td>-21600</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>60</td>
+            <td><a href="../user/877.html">Псаломщиков Евгений</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-38500</span></td>
+            <td>3</td>
+            <td>-38500</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>61</td>
+            <td><a href="../user/1123.html">Вахонин Степан</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-55300</span></td>
+            <td>3</td>
+            <td>-27650</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>62</td>
+            <td><a href="../user/1122.html">Харламов Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-92800</span></td>
+            <td>3.3333</td>
+            <td>-30933</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>63</td>
+            <td><a href="../user/534.html">Мосякин Егор</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-55000</span></td>
+            <td>3.5</td>
+            <td>-27500</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>64</td>
+            <td><a href="../user/955.html">Mimmi Lehtonen</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-42100</span></td>
+            <td>4</td>
+            <td>-42100</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>65</td>
+            <td><a href="../user/402.html">Парфенов Никита</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-42400</span></td>
+            <td>4</td>
+            <td>-42400</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>66</td>
+            <td><a href="../user/479.html">Габдуллина Динара</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-49100</span></td>
+            <td>4</td>
+            <td>-49100</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>67</td>
+            <td><a href="../user/994.html">Николаичев Александр</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-64100</span></td>
+            <td>4</td>
+            <td>-64100</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>68</td>
+            <td><a href="../user/856.html">Ожиганов Арсений</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-116400</span></td>
+            <td>4</td>
+            <td>-38800</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>69</td>
+            <td><a href="../user/825.html">Байбеков Айдын</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-127800</span></td>
+            <td>4</td>
+            <td>-63900</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>70</td>
+            <td><a href="../user/346.html">Курчавов Максим</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

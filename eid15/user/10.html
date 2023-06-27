@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Статистика и графики: Матвеева Алена - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid15.html" class="nav-link">Фуритен</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    
+<div class="graphs">
+
+        <h3>Матвеева Алена: личная статистика</h3>
+        <small>id: 10</small>
+        <hr>
+
+
+            <div id='chart_rating'></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var i18n = {
+            '_LABEL_RATING': 'Рейтинг',
+            '_HANDS_VALUE': 'Стоимость рук',
+            '_HAN': 'Хан',
+            '_YAKU_OVERALLTIME': 'Собранные яку (за все время)',
+            '_GAME_DETAILS': 'Подробнее об игре'
+        };
+
+        plotRating(
+            [[0,1500],[1,1537],[2,1544],[3,1526],[4,1568],[5,1610],[6,1594],[7,1600],[8,1607],[9,1597],[10,1585],[11,1623],[12,1635],[13,1682],[14,1655],[15,1668],[16,1663],[17,1703],[18,1713],[19,1742],[20,1772],[21,1751],[22,1700],[23,1688],[24,1655],[25,1626],[26,1594],[27,1635],[28,1652],[29,1658],[30,1684],[31,1712],[32,1692],[33,1662],[34,1689]],
+            {"790":[{"session_hash":"d22ce993ece94063b8134c6c3a045663878b7587","event_id":15,"player_id":13,"score":15600,"rating_delta":-29.4,"place":4},{"session_hash":"d22ce993ece94063b8134c6c3a045663878b7587","event_id":15,"player_id":10,"score":52800,"rating_delta":37.8,"place":1},{"session_hash":"d22ce993ece94063b8134c6c3a045663878b7587","event_id":15,"player_id":52,"score":28900,"rating_delta":3.9,"place":2},{"session_hash":"d22ce993ece94063b8134c6c3a045663878b7587","event_id":15,"player_id":17,"score":22700,"rating_delta":-12.3,"place":3}],"800":[{"session_hash":"4b1bae3688e0c560c4cb571ef99ece6a6375b107","event_id":15,"player_id":34,"score":24700,"rating_delta":-10.3,"place":3},{"session_hash":"4b1bae3688e0c560c4cb571ef99ece6a6375b107","event_id":15,"player_id":10,"score":32000,"rating_delta":7,"place":2},{"session_hash":"4b1bae3688e0c560c4cb571ef99ece6a6375b107","event_id":15,"player_id":52,"score":23900,"rating_delta":-21.1,"place":4},{"session_hash":"4b1bae3688e0c560c4cb571ef99ece6a6375b107","event_id":15,"player_id":17,"score":39400,"rating_delta":24.4,"place":1}],"809":[{"session_hash":"df2203689e4f8def3f425c83c5085ff9c05107fd","event_id":15,"player_id":31,"score":27900,"rating_delta":-7.1,"place":3},{"session_hash":"df2203689e4f8def3f425c83c5085ff9c05107fd","event_id":15,"player_id":15,"score":29700,"rating_delta":4.7,"place":2},{"session_hash":"df2203689e4f8def3f425c83c5085ff9c05107fd","event_id":15,"player_id":10,"score":26500,"rating_delta":-18.5,"place":4},{"session_hash":"df2203689e4f8def3f425c83c5085ff9c05107fd","event_id":15,"player_id":9,"score":35900,"rating_delta":20.9,"place":1}],"811":[{"session_hash":"fff98c4faa57226a8a051d3041d8342bcc8df14c","event_id":15,"player_id":10,"score":57000,"rating_delta":42,"place":1},{"session_hash":"fff98c4faa57226a8a051d3041d8342bcc8df14c","event_id":15,"player_id":9,"score":12400,"rating_delta":-32.6,"place":4},{"session_hash":"fff98c4faa57226a8a051d3041d8342bcc8df14c","event_id":15,"player_id":15,"score":34600,"rating_delta":9.6,"place":2},{"session_hash":"fff98c4faa57226a8a051d3041d8342bcc8df14c","event_id":15,"player_id":47,"score":16000,"rating_delta":-19,"place":3}],"821":[{"session_hash":"1f6fccacd6d4516056098cb0a1ac2405217638c7","event_id":15,"player_id":47,"score":22600,"rating_delta":-12.4,"place":3},{"session_hash":"1f6fccacd6d4516056098cb0a1ac2405217638c7","event_id":15,"player_id":15,"score":-300,"rating_delta":-45.3,"place":4},{"session_hash":"1f6fccacd6d4516056098cb0a1ac2405217638c7","event_id":15,"player_id":10,"score":57100,"rating_delta":42.1,"place":1},{"session_hash":"1f6fccacd6d4516056098cb0a1ac2405217638c7","event_id":15,"player_id":9,"score":38600,"rating_delta":13.6,"place":2}],"825":[{"session_hash":"c905982aeafea47ce21ffb42e420a8be6b404b0a","event_id":15,"player_id":13,"score":23400,"rating_delta":-1.6,"place":2},{"session_hash":"c905982aeafea47ce21ffb42e420a8be6b404b0a","event_id":15,"player_id":10,"score":19500,"rating_delta":-15.5,"place":3},{"session_hash":"c905982aeafea47ce21ffb42e420a8be6b404b0a","event_id":15,"player_id":9,"score":67700,"rating_delta":52.7,"place":1},{"session_hash":"c905982aeafea47ce21ffb42e420a8be6b404b0a","event_id":15,"player_id":54,"score":9400,"rating_delta":-35.6,"place":4}],"830":[{"session_hash":"1304622e8cbd6d024e049862f5df37891bdc9613","event_id":15,"player_id":10,"score":30900,"rating_delta":5.9,"place":2},{"session_hash":"1304622e8cbd6d024e049862f5df37891bdc9613","event_id":15,"player_id":17,"score":24800,"rating_delta":-10.2,"place":3},{"session_hash":"1304622e8cbd6d024e049862f5df37891bdc9613","event_id":15,"player_id":13,"score":22700,"rating_delta":-22.3,"place":4},{"session_hash":"1304622e8cbd6d024e049862f5df37891bdc9613","event_id":15,"player_id":9,"score":41600,"rating_delta":26.6,"place":1}],"831":[{"session_hash":"31161aed0f022d10f57298c54b4fa17bc56dc2ab","event_id":15,"player_id":10,"score":31600,"rating_delta":6.6,"place":2},{"session_hash":"31161aed0f022d10f57298c54b4fa17bc56dc2ab","event_id":15,"player_id":9,"score":29500,"rating_delta":-5.5,"place":3},{"session_hash":"31161aed0f022d10f57298c54b4fa17bc56dc2ab","event_id":15,"player_id":17,"score":39600,"rating_delta":24.6,"place":1},{"session_hash":"31161aed0f022d10f57298c54b4fa17bc56dc2ab","event_id":15,"player_id":13,"score":19300,"rating_delta":-25.7,"place":4}],"994":[{"session_hash":"19903d57b9950a3ff7acee4b96716cf5ad56e59a","event_id":15,"player_id":10,"score":24700,"rating_delta":-10.3,"place":3},{"session_hash":"19903d57b9950a3ff7acee4b96716cf5ad56e59a","event_id":15,"player_id":23,"score":5600,"rating_delta":-39.4,"place":4},{"session_hash":"19903d57b9950a3ff7acee4b96716cf5ad56e59a","event_id":15,"player_id":13,"score":27800,"rating_delta":2.8,"place":2},{"session_hash":"19903d57b9950a3ff7acee4b96716cf5ad56e59a","event_id":15,"player_id":112,"score":61900,"rating_delta":46.9,"place":1}],"1770":[{"session_hash":"c310b593ad6d666de41410cbc9bef783b0f38f1d","event_id":15,"player_id":9,"score":2300,"rating_delta":-42.7,"place":4},{"session_hash":"c310b593ad6d666de41410cbc9bef783b0f38f1d","event_id":15,"player_id":13,"score":48600,"rating_delta":33.6,"place":1},{"session_hash":"c310b593ad6d666de41410cbc9bef783b0f38f1d","event_id":15,"player_id":10,"score":23400,"rating_delta":-11.6,"place":3},{"session_hash":"c310b593ad6d666de41410cbc9bef783b0f38f1d","event_id":15,"player_id":54,"score":45700,"rating_delta":20.7,"place":2}],"1773":[{"session_hash":"98eb82896314b25893829bad00a100c138abc52e","event_id":15,"player_id":54,"score":27600,"rating_delta":2.6,"place":2},{"session_hash":"98eb82896314b25893829bad00a100c138abc52e","event_id":15,"player_id":9,"score":22600,"rating_delta":-12.4,"place":3},{"session_hash":"98eb82896314b25893829bad00a100c138abc52e","event_id":15,"player_id":13,"score":17100,"rating_delta":-27.9,"place":4},{"session_hash":"98eb82896314b25893829bad00a100c138abc52e","event_id":15,"player_id":10,"score":52700,"rating_delta":37.7,"place":1}],"1775":[{"session_hash":"9869498fa40f6a25acf4278a7cd70c4d0af58c0c","event_id":15,"player_id":9,"score":44000,"rating_delta":29,"place":1},{"session_hash":"9869498fa40f6a25acf4278a7cd70c4d0af58c0c","event_id":15,"player_id":54,"score":9100,"rating_delta":-35.9,"place":4},{"session_hash":"9869498fa40f6a25acf4278a7cd70c4d0af58c0c","event_id":15,"player_id":10,"score":37000,"rating_delta":12,"place":2},{"session_hash":"9869498fa40f6a25acf4278a7cd70c4d0af58c0c","event_id":15,"player_id":13,"score":29900,"rating_delta":-5.1,"place":3}],"1780":[{"session_hash":"98d17f7df6d0c36dceb7e3ff1a7c59bbf9c18045","event_id":15,"player_id":54,"score":12400,"rating_delta":-32.6,"place":4},{"session_hash":"98d17f7df6d0c36dceb7e3ff1a7c59bbf9c18045","event_id":15,"player_id":10,"score":62600,"rating_delta":47.6,"place":1},{"session_hash":"98d17f7df6d0c36dceb7e3ff1a7c59bbf9c18045","event_id":15,"player_id":13,"score":24200,"rating_delta":-0.8,"place":2},{"session_hash":"98d17f7df6d0c36dceb7e3ff1a7c59bbf9c18045","event_id":15,"player_id":9,"score":20800,"rating_delta":-14.2,"place":3}],"1808":[{"session_hash":"16cd82002e7c8f91a58ead57fea8e710baeb9078","event_id":15,"player_id":10,"score":17600,"rating_delta":-27.4,"place":4},{"session_hash":"16cd82002e7c8f91a58ead57fea8e710baeb9078","event_id":15,"player_id":54,"score":57400,"rating_delta":42.4,"place":1},{"session_hash":"16cd82002e7c8f91a58ead57fea8e710baeb9078","event_id":15,"player_id":17,"score":21600,"rating_delta":-13.4,"place":3},{"session_hash":"16cd82002e7c8f91a58ead57fea8e710baeb9078","event_id":15,"player_id":13,"score":23400,"rating_delta":-1.6,"place":2}],"2717":[{"session_hash":"f3cdef0872287eb729a2e77867f4b5c77f9e8c95","event_id":15,"player_id":20,"score":32200,"rating_delta":-2.8,"place":3},{"session_hash":"f3cdef0872287eb729a2e77867f4b5c77f9e8c95","event_id":15,"player_id":27,"score":50800,"rating_delta":35.8,"place":1},{"session_hash":"f3cdef0872287eb729a2e77867f4b5c77f9e8c95","event_id":15,"player_id":10,"score":38000,"rating_delta":13,"place":2},{"session_hash":"f3cdef0872287eb729a2e77867f4b5c77f9e8c95","event_id":15,"player_id":17,"score":-1000,"rating_delta":-46,"place":4}],"2718":[{"session_hash":"224038efb76e7931375bb0584b436a443b6d33d6","event_id":15,"player_id":10,"score":29700,"rating_delta":-5.3,"place":3},{"session_hash":"224038efb76e7931375bb0584b436a443b6d33d6","event_id":15,"player_id":20,"score":17800,"rating_delta":-27.2,"place":4},{"session_hash":"224038efb76e7931375bb0584b436a443b6d33d6","event_id":15,"player_id":27,"score":42300,"rating_delta":27.3,"place":1},{"session_hash":"224038efb76e7931375bb0584b436a443b6d33d6","event_id":15,"player_id":17,"score":30200,"rating_delta":5.2,"place":2}],"7892":[{"session_hash":"5d1ff251ad1223a4aac95052130c4f3b05cca175","event_id":15,"player_id":10,"score":54900,"rating_delta":39.9,"place":1},{"session_hash":"5d1ff251ad1223a4aac95052130c4f3b05cca175","event_id":15,"player_id":17,"score":10700,"rating_delta":-34.3,"place":4},{"session_hash":"5d1ff251ad1223a4aac95052130c4f3b05cca175","event_id":15,"player_id":16,"score":27900,"rating_delta":2.9,"place":2},{"session_hash":"5d1ff251ad1223a4aac95052130c4f3b05cca175","event_id":15,"player_id":23,"score":24500,"rating_delta":-10.5,"place":3}],"7893":[{"session_hash":"946fd732d00cb4122ff2a7f9f69e2ad85b8877c5","event_id":15,"player_id":23,"score":39900,"rating_delta":24.9,"place":1},{"session_hash":"946fd732d00cb4122ff2a7f9f69e2ad85b8877c5","event_id":15,"player_id":10,"score":35600,"rating_delta":10.6,"place":2},{"session_hash":"946fd732d00cb4122ff2a7f9f69e2ad85b8877c5","event_id":15,"player_id":16,"score":21700,"rating_delta":-23.3,"place":4},{"session_hash":"946fd732d00cb4122ff2a7f9f69e2ad85b8877c5","event_id":15,"player_id":17,"score":22800,"rating_delta":-12.2,"place":3}],"7897":[{"session_hash":"60c7ea4402ce44957df7773220abd3477b243165","event_id":15,"player_id":17,"score":23500,"rating_delta":-11.5,"place":3},{"session_hash":"60c7ea4402ce44957df7773220abd3477b243165","event_id":15,"player_id":10,"score":44100,"rating_delta":29.1,"place":1},{"session_hash":"60c7ea4402ce44957df7773220abd3477b243165","event_id":15,"player_id":16,"score":12800,"rating_delta":-32.2,"place":4},{"session_hash":"60c7ea4402ce44957df7773220abd3477b243165","event_id":15,"player_id":23,"score":39600,"rating_delta":14.6,"place":2}],"7902":[{"session_hash":"3a6b0e8fe5be4b3476c90320a8b530dc23729ad3","event_id":15,"player_id":17,"score":27600,"rating_delta":-7.4,"place":3},{"session_hash":"3a6b0e8fe5be4b3476c90320a8b530dc23729ad3","event_id":15,"player_id":23,"score":36000,"rating_delta":11,"place":2},{"session_hash":"3a6b0e8fe5be4b3476c90320a8b530dc23729ad3","event_id":15,"player_id":10,"score":45100,"rating_delta":30.1,"place":1},{"session_hash":"3a6b0e8fe5be4b3476c90320a8b530dc23729ad3","event_id":15,"player_id":16,"score":11300,"rating_delta":-33.7,"place":4}],"7909":[{"session_hash":"2e7c126cab43d1fe98983023436fda67ceebba22","event_id":15,"player_id":10,"score":13800,"rating_delta":-21.2,"place":3},{"session_hash":"2e7c126cab43d1fe98983023436fda67ceebba22","event_id":15,"player_id":23,"score":12800,"rating_delta":-32.2,"place":4},{"session_hash":"2e7c126cab43d1fe98983023436fda67ceebba22","event_id":15,"player_id":16,"score":26900,"rating_delta":1.9,"place":2},{"session_hash":"2e7c126cab43d1fe98983023436fda67ceebba22","event_id":15,"player_id":17,"score":66500,"rating_delta":51.5,"place":1}],"7914":[{"session_hash":"3c3334b068968b4bd5f271a02926460c4432efc3","event_id":15,"player_id":23,"score":30000,"rating_delta":-5,"place":3},{"session_hash":"3c3334b068968b4bd5f271a02926460c4432efc3","event_id":15,"player_id":16,"score":65800,"rating_delta":50.8,"place":1},{"session_hash":"3c3334b068968b4bd5f271a02926460c4432efc3","event_id":15,"player_id":17,"score":30300,"rating_delta":5.3,"place":2},{"session_hash":"3c3334b068968b4bd5f271a02926460c4432efc3","event_id":15,"player_id":10,"score":-6100,"rating_delta":-51.1,"place":4}],"7919":[{"session_hash":"0260b63bcb8ede6f7cc82c6042ffa46498ef5cae","event_id":15,"player_id":17,"score":52200,"rating_delta":37.2,"place":1},{"session_hash":"0260b63bcb8ede6f7cc82c6042ffa46498ef5cae","event_id":15,"player_id":23,"score":11800,"rating_delta":-33.2,"place":4},{"session_hash":"0260b63bcb8ede6f7cc82c6042ffa46498ef5cae","event_id":15,"player_id":16,"score":33300,"rating_delta":8.3,"place":2},{"session_hash":"0260b63bcb8ede6f7cc82c6042ffa46498ef5cae","event_id":15,"player_id":10,"score":22700,"rating_delta":-12.3,"place":3}],"8962":[{"session_hash":"4b88b9aa618cd6cd4f49f2ce17fe90a179082749","event_id":15,"player_id":10,"score":12300,"rating_delta":-32.7,"place":4},{"session_hash":"4b88b9aa618cd6cd4f49f2ce17fe90a179082749","event_id":15,"player_id":13,"score":16100,"rating_delta":-18.9,"place":3},{"session_hash":"4b88b9aa618cd6cd4f49f2ce17fe90a179082749","event_id":15,"player_id":59,"score":53400,"rating_delta":38.4,"place":1},{"session_hash":"4b88b9aa618cd6cd4f49f2ce17fe90a179082749","event_id":15,"player_id":16,"score":38200,"rating_delta":13.2,"place":2}],"8966":[{"session_hash":"407ed582a830ae92c5e8f896ae041a028f718924","event_id":15,"player_id":13,"score":39700,"rating_delta":24.7,"place":1},{"session_hash":"407ed582a830ae92c5e8f896ae041a028f718924","event_id":15,"player_id":16,"score":39100,"rating_delta":14.1,"place":2},{"session_hash":"407ed582a830ae92c5e8f896ae041a028f718924","event_id":15,"player_id":59,"score":25300,"rating_delta":-9.7,"place":3},{"session_hash":"407ed582a830ae92c5e8f896ae041a028f718924","event_id":15,"player_id":10,"score":15900,"rating_delta":-29.1,"place":4}],"9301":[{"session_hash":"083558002d00fff15dccd7a4be1e57685183c618","event_id":15,"player_id":112,"score":15100,"rating_delta":-19.9,"place":3},{"session_hash":"083558002d00fff15dccd7a4be1e57685183c618","event_id":15,"player_id":495,"score":52100,"rating_delta":37.1,"place":1},{"session_hash":"083558002d00fff15dccd7a4be1e57685183c618","event_id":15,"player_id":10,"score":13500,"rating_delta":-31.5,"place":4},{"session_hash":"083558002d00fff15dccd7a4be1e57685183c618","event_id":15,"player_id":23,"score":39300,"rating_delta":14.3,"place":2}],"9487":[{"session_hash":"644f2b0917236b08286e27739199b93c881bebcc","event_id":15,"player_id":59,"score":39200,"rating_delta":14.2,"place":2},{"session_hash":"644f2b0917236b08286e27739199b93c881bebcc","event_id":15,"player_id":10,"score":56100,"rating_delta":41.1,"place":1},{"session_hash":"644f2b0917236b08286e27739199b93c881bebcc","event_id":15,"player_id":495,"score":19800,"rating_delta":-15.2,"place":3},{"session_hash":"644f2b0917236b08286e27739199b93c881bebcc","event_id":15,"player_id":23,"score":4900,"rating_delta":-40.1,"place":4}],"10329":[{"session_hash":"d589746a4efd9fb11c4c181fe8a11ce3ab61fb1c","event_id":15,"player_id":42,"score":32200,"rating_delta":-2.8,"place":3},{"session_hash":"d589746a4efd9fb11c4c181fe8a11ce3ab61fb1c","event_id":15,"player_id":44,"score":46200,"rating_delta":31.2,"place":1},{"session_hash":"d589746a4efd9fb11c4c181fe8a11ce3ab61fb1c","event_id":15,"player_id":774,"score":-100,"rating_delta":-45.1,"place":4},{"session_hash":"d589746a4efd9fb11c4c181fe8a11ce3ab61fb1c","event_id":15,"player_id":10,"score":41700,"rating_delta":16.7,"place":2}],"11113":[{"session_hash":"2607a8110704415749b8986e9f8cb0edc19470d5","event_id":15,"player_id":20,"score":28700,"rating_delta":-6.3,"place":3},{"session_hash":"2607a8110704415749b8986e9f8cb0edc19470d5","event_id":15,"player_id":112,"score":39400,"rating_delta":24.4,"place":1},{"session_hash":"2607a8110704415749b8986e9f8cb0edc19470d5","event_id":15,"player_id":10,"score":30900,"rating_delta":5.9,"place":2},{"session_hash":"2607a8110704415749b8986e9f8cb0edc19470d5","event_id":15,"player_id":13,"score":21000,"rating_delta":-24,"place":4}],"16813":[{"session_hash":"bc2b7aa1bcf1d44a7d9d9a12ccb90aecfb095675","event_id":15,"player_id":16,"score":57200,"rating_delta":42.2,"place":1},{"session_hash":"bc2b7aa1bcf1d44a7d9d9a12ccb90aecfb095675","event_id":15,"player_id":52,"score":-5300,"rating_delta":-50.3,"place":4},{"session_hash":"bc2b7aa1bcf1d44a7d9d9a12ccb90aecfb095675","event_id":15,"player_id":9,"score":17300,"rating_delta":-17.7,"place":3},{"session_hash":"bc2b7aa1bcf1d44a7d9d9a12ccb90aecfb095675","event_id":15,"player_id":10,"score":50800,"rating_delta":25.8,"place":2}],"16814":[{"session_hash":"32fb76d2e9a74b87aa9973f639b33ed721c2966f","event_id":15,"player_id":10,"score":43300,"rating_delta":28.3,"place":1},{"session_hash":"32fb76d2e9a74b87aa9973f639b33ed721c2966f","event_id":15,"player_id":16,"score":32200,"rating_delta":7.2,"place":2},{"session_hash":"32fb76d2e9a74b87aa9973f639b33ed721c2966f","event_id":15,"player_id":52,"score":22500,"rating_delta":-12.5,"place":3},{"session_hash":"32fb76d2e9a74b87aa9973f639b33ed721c2966f","event_id":15,"player_id":9,"score":22000,"rating_delta":-23,"place":4}],"16815":[{"session_hash":"c91ca57cd066f99e1c81eb2f65e07341a03872e2","event_id":15,"player_id":52,"score":26200,"rating_delta":-8.8,"place":3},{"session_hash":"c91ca57cd066f99e1c81eb2f65e07341a03872e2","event_id":15,"player_id":10,"score":24500,"rating_delta":-20.5,"place":4},{"session_hash":"c91ca57cd066f99e1c81eb2f65e07341a03872e2","event_id":15,"player_id":16,"score":34600,"rating_delta":9.6,"place":2},{"session_hash":"c91ca57cd066f99e1c81eb2f65e07341a03872e2","event_id":15,"player_id":9,"score":34700,"rating_delta":19.7,"place":1}],"16819":[{"session_hash":"311bc70b048b4224a539757649025dc741526c1b","event_id":15,"player_id":16,"score":30100,"rating_delta":-4.9,"place":3},{"session_hash":"311bc70b048b4224a539757649025dc741526c1b","event_id":15,"player_id":52,"score":32900,"rating_delta":7.9,"place":2},{"session_hash":"311bc70b048b4224a539757649025dc741526c1b","event_id":15,"player_id":9,"score":41300,"rating_delta":26.3,"place":1},{"session_hash":"311bc70b048b4224a539757649025dc741526c1b","event_id":15,"player_id":10,"score":15700,"rating_delta":-29.3,"place":4}],"16825":[{"session_hash":"ba9e4150708d91e83b45f56a22d036408c91290b","event_id":15,"player_id":9,"score":31200,"rating_delta":-3.8,"place":3},{"session_hash":"ba9e4150708d91e83b45f56a22d036408c91290b","event_id":15,"player_id":10,"score":41800,"rating_delta":26.8,"place":1},{"session_hash":"ba9e4150708d91e83b45f56a22d036408c91290b","event_id":15,"player_id":52,"score":14900,"rating_delta":-30.1,"place":4},{"session_hash":"ba9e4150708d91e83b45f56a22d036408c91290b","event_id":15,"player_id":16,"score":32100,"rating_delta":7.1,"place":2}]},
+            10,
+            {"9":{"id":9,"display_name":"\u041a\u0438\u043c \u0412\u0430\u043b\u0435\u0440\u0438\u044f","tenhou_id":"Replay"},"10":{"id":10,"display_name":"\u041c\u0430\u0442\u0432\u0435\u0435\u0432\u0430 \u0410\u043b\u0435\u043d\u0430","tenhou_id":"Sayaka-s"},"13":{"id":13,"display_name":"\u0421\u0430\u043d\u0436\u0430\u0440\u043e\u0432 \u0420\u043e\u043c\u0430\u043d","tenhou_id":"-\u30e9\u30d0\u30c3\u30af-"},"15":{"id":15,"display_name":"\u0422\u0438\u0442\u043e\u0432\u0430 \u0415\u043b\u0435\u043d\u0430","tenhou_id":"Helena"},"16":{"id":16,"display_name":"\u0424\u0430\u043b\u044c\u043a\u043e \u0418\u0440\u0438\u043d\u0430","tenhou_id":"flashka"},"17":{"id":17,"display_name":"\u0413\u043e\u043d\u0447\u0430\u0440\u0435\u043d\u043a\u043e \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440","tenhou_id":"Razout"},"20":{"id":20,"display_name":"\u041a\u0430\u0440\u043f\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440","tenhou_id":"th_"},"23":{"id":23,"display_name":"\u0413\u0443\u0431\u0430\u043d\u043e\u0432\u0430 \u041a\u0440\u0438\u0441\u0442\u0438\u043d\u0430","tenhou_id":"selesta"},"27":{"id":27,"display_name":"\u0424\u0435\u0434\u043e\u0440\u043a\u0435\u0432\u0438\u0447 \u0410\u043d\u0442\u043e\u043d","tenhou_id":""},"31":{"id":31,"display_name":"\u0422\u0440\u0443\u0431\u0438\u0446\u044b\u043d\u0430 \u041b\u0443\u043a\u0435\u0440\u044c\u044f","tenhou_id":""},"34":{"id":34,"display_name":"\u041a\u0443\u0437\u044c\u043a\u043e\u043a\u043e\u0432 \u0421\u0435\u0440\u0433\u0435\u0439","tenhou_id":"N\u043eNam\u0435"},"42":{"id":42,"display_name":"\u0421\u0442\u0440\u0435\u043b\u043a\u043e\u0432 \u041f\u0430\u0432\u0435\u043b","tenhou_id":"Manabi0"},"44":{"id":44,"display_name":"\u0411\u044b\u0447\u043a\u043e\u0432\u0430 \u041d\u0438\u043d\u0430","tenhou_id":"Mau_nsk"},"47":{"id":47,"display_name":"\u041b\u0443\u0433\u043e\u0432\u0430\u044f \u041b\u044e\u0431\u043e\u0432\u044c","tenhou_id":""},"52":{"id":52,"display_name":"\u0421\u043e\u043b\u043e\u043c\u043e\u043d\u043e\u0432 \u0410\u043d\u0434\u0440\u0435\u0439","tenhou_id":""},"54":{"id":54,"display_name":"\u041a\u0430\u0437\u0430\u043d\u0446\u0435\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430","tenhou_id":"SilenSan"},"59":{"id":59,"display_name":"\u0411\u043b\u0435\u0434\u043d\u044b\u0445 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440","tenhou_id":""},"112":{"id":112,"display_name":"\u0420\u044b\u0436\u043a\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440","tenhou_id":""},"495":{"id":495,"display_name":"\u0413\u043e\u043b\u0443\u0431\u0435\u0432 \u0410\u043d\u0434\u0440\u0435\u0439","tenhou_id":"\u0410\u043a\u0430\u0434\u043e\u0440\u0410"},"774":{"id":774,"display_name":"\u041a\u0438\u0440\u0447\u0430\u043d\u043e\u0432 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d","tenhou_id":"Nyaka"}},
+            0,
+            i18n
+        );
+        plotHands(
+            [["1",16],["2",22],["3",25],["4",15],["5",11],["6",5],["7",3],["8",1],["9",1],["10",0],["11",0],["12",0]],
+            [[1,"\u0425\u043e\u0442\u0435\u0439"],[1,"\u042f\u043a\u0443\u0445\u0430\u0439 3"],[1,"\u042f\u043a\u0443\u0445\u0430\u0439 4"],[1,"\u0420\u0438\u043d\u0448\u0430\u043d \u043a\u0430\u0439\u0445\u043e"],[2,"\u0427\u0438\u0438\u0442\u043e\u0439\u0446\u0443"],[2,"\u0418\u0446\u0446\u0443"],[2,"\u0427\u0438\u043d\u0438\u0446\u0443"],[2,"\u0421\u0430\u043d\u0430\u043d\u043a\u043e"],[3,"\u0421\u0430\u043d\u0448\u043e\u043a\u0443"],[3,"\u0427\u0430\u043d\u0442\u0430"],[4,"\u0418\u0438\u043f\u0435\u0439\u043a\u043e"],[8,"\u0422\u043e\u0439\u0442\u043e\u0439"],[9,"\u042f\u043a\u0443\u0445\u0430\u0439 2"],[10,"\u0418\u043f\u043f\u0430\u0446\u0443"],[14,"\u0425\u043e\u043d\u0438\u0446\u0443"],[16,"\u041c\u0435\u043d\u0434\u0437\u0435\u043d \u0446\u0443\u043c\u043e"],[17,"\u041f\u0438\u043d-\u0444\u0443"],[17,"\u0422\u0430\u043d\u044f\u043e"],[28,"\u042f\u043a\u0443\u0445\u0430\u0439 1"],[38,"\u0420\u0438\u0438\u0447\u0438"],[53,"\u042f\u043a\u0443\u0445\u0430\u0439: \u0432\u0441\u0435\u0433\u043e"]],
+            i18n
+        );
+    });
+</script>
+            <hr>
+
+            <div class="container">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped table-condensed">
+                        <tr>
+                            <td colspan="2" style="padding-left: 20px"><b>Общая статистика</b></td>
+                        </tr>
+                        <tr>
+                            <td>Сыграно игр</td>
+                            <td><b>34</b></td>
+                        </tr>
+                        <tr>
+                            <td>Сыграно раздач</td>
+                            <td><b>364</b></td>
+                        </tr>
+                        <tr>
+                            <td>Выиграно раздач</td>
+                            <td><b>99</b> &nbsp; (27.2%)</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" style="padding-left: 20px"><b>По итогам раздач:</b></td>
+                        </tr>
+                        <tr>
+                            <td>Выигрышей по рон</td>
+                            <td><b>72</b> &nbsp; (19.78%)</td>
+                        </tr>
+                        <tr>
+                            <td>Выигрышей по цумо</td>
+                            <td><b>27</b> &nbsp; (7.42%)</td>
+                        </tr>
+                        <tr>
+                            <td>Набросов в рон</td>
+                            <td><b>64</b> &nbsp; (17.58%)</td>
+                        </tr>
+                        <tr>
+                            <td>- в том числе из-за риичи</td>
+                            <td><b>9</b> &nbsp; (2.47%)</td>
+                        </tr>
+                        <tr>
+                            <td>Выплат по цумо</td>
+                            <td><b>73</b> &nbsp; (20.05%)</td>
+                        </tr>
+                        <tr>
+                            <td>Открытых рук</td>
+                            <td><b>50</b> &nbsp; (50.51%)</td>
+                        </tr>
+                        <tr>
+                            <td>Штрафов чомбо</td>
+                            <td><b>0</b> &nbsp; (0%)</td>
+                        </tr>
+                        <tr>
+                            <td>Ставок риичи</td>
+                            <td><b>72</b> &nbsp; (19.78%)</td>
+                        </tr>
+                        <tr>
+                            <td>- из них выигранных</td>
+                            <td><b>38</b> &nbsp; (52.78%)</td>
+                        </tr>
+                        <tr>
+                            <td>- из них потерянных</td>
+                            <td><b>34</b> &nbsp; (47.22%)</td>
+                        </tr>
+                        <tr>
+                            <td>Количество дор (ср.)</td>
+                            <td><b>89</b> &nbsp; (0.90)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-left: 20px"><b>Статистика по местам:</b></td>
+                        </tr>
+                        <tr>
+                            <td>1 место</td>
+                            <td>32.35 %</td>
+                        </tr>
+                        <tr>
+                            <td>2 место</td>
+                            <td>26.47 %</td>
+                        </tr>
+                        <tr>
+                            <td>3 место</td>
+                            <td>17.65 %</td>
+                        </tr>
+                        <tr>
+                            <td>4 место</td>
+                            <td>23.53 %</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-left: 20px"><b>Очки по итогу игры:</b></td>
+                        </tr>
+                        <tr>
+                            <td>Минимальные</td>
+                            <td>-6,100</td>
+                        </tr>
+                        <tr>
+                            <td>Максимальные</td>
+                            <td>62,600</td>
+                        </tr>
+                        <tr>
+                            <td>В среднем</td>
+                            <td>33,814</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-8">
+                    <div id='chart_hands'></div>
+                    <hr>
+                    <div id='chart_yaku'></div>
+                </div>
+            </div>
+            </div>
+
+</div>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

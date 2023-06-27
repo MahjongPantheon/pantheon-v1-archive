@@ -1,0 +1,673 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Рейтинг - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid349.html" class="nav-link">Командный турнир Агари</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+              <li class="nav-item"><a href="team.html" class="nav-link">Командный рейтинг</a></li>
+                    <li class="nav-item"><a href="../timer.html" target="_blank" class="nav-link">Таймер и рассадка</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style>
+    .rating-flex-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .players-options{
+      margin-left: 40px;
+    }
+    .row-min-was-played:nth-of-type(even) {
+        background-color: rgba(0, 255, 129, 0.12);
+    }
+    .row-min-was-played:nth-of-type(odd) {
+        background-color: rgba(96, 201, 149, 0.27) !important;
+    }
+</style>
+
+<script>
+    function onChange(showPlayers) {
+      let href = new URL(location.href);
+      href.searchParams.set('players', showPlayers);
+      location.href=href;
+    }
+</script>
+
+<div class="rating-flex-title">
+  <h3>Рейтинг</h3>
+</div>
+<br>
+
+
+
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>#</th>
+            <th><a href="index.htm?sort=name">Игрок</a></th>
+                <th>Команда</th>
+            <th><a href="index-1.htm?sort=rating">Рейтинговые очки</a></th>
+            <th><a href="index-2.htm?sort=avg_place">Среднее место</a></th>
+            <th><a href="index-3.htm?sort=avg_score">Средние очки</a><span class="icon-arrow-down"></span></th>
+            <th>Сыграно игр</th>
+        </tr>
+        <tr class="">
+            <td>1</td>
+            <td><a href="../user/220.html">Леонтьев Алексей</a></td>
+              <td>Пупырка и Капибары пустоты</td>
+            <td><span class="badge
+                badge-success
+                
+            ">224800</span></td>
+            <td>1.8</td>
+            <td>22480</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>2</td>
+            <td><a href="../user/973.html">Еремкина Мария</a></td>
+              <td>Ван соу ван лав</td>
+            <td><span class="badge
+                badge-success
+                
+            ">182000</span></td>
+            <td>1.9</td>
+            <td>18200</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>3</td>
+            <td><a href="../user/319.html">Патрикеев Павел</a></td>
+              <td>Yaranaika</td>
+            <td><span class="badge
+                badge-success
+                
+            ">179100</span></td>
+            <td>1.9</td>
+            <td>17910</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>4</td>
+            <td><a href="../user/309.html">Наданьян Владимир</a></td>
+              <td>Капитолий</td>
+            <td><span class="badge
+                badge-success
+                
+            ">145300</span></td>
+            <td>1.9</td>
+            <td>14530</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>5</td>
+            <td><a href="../user/244.html">Васильев Сергей</a></td>
+              <td>Arslan's Bizarre Adventure</td>
+            <td><span class="badge
+                badge-success
+                
+            ">137600</span></td>
+            <td>2</td>
+            <td>13760</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>6</td>
+            <td><a href="../user/283.html">Смоленцев Виктор</a></td>
+              <td>Одна ошибка</td>
+            <td><span class="badge
+                badge-success
+                
+            ">136700</span></td>
+            <td>2</td>
+            <td>13670</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>7</td>
+            <td><a href="../user/255.html">Антонов Евгений</a></td>
+              <td>Yaranaika</td>
+            <td><span class="badge
+                badge-success
+                
+            ">128900</span></td>
+            <td>2.1</td>
+            <td>12890</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>8</td>
+            <td><a href="../user/815.html">Максимовский Василий</a></td>
+              <td>Одна ошибка</td>
+            <td><span class="badge
+                badge-success
+                
+            ">122200</span></td>
+            <td>2</td>
+            <td>12220</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>9</td>
+            <td><a href="../user/316.html">Мишаков Дмитрий</a></td>
+              <td>Трое в лодке, не считая собаки</td>
+            <td><span class="badge
+                badge-success
+                
+            ">119600</span></td>
+            <td>2.3</td>
+            <td>11960</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>10</td>
+            <td><a href="../user/323.html">Сироткин Дмитрий</a></td>
+              <td>Arslan's Bizarre Adventure</td>
+            <td><span class="badge
+                badge-success
+                
+            ">118800</span></td>
+            <td>2</td>
+            <td>11880</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>11</td>
+            <td><a href="../user/245.html">Павлов Георгий</a></td>
+              <td>Сяки Маки :3</td>
+            <td><span class="badge
+                badge-success
+                
+            ">96300</span></td>
+            <td>2.1</td>
+            <td>9630</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>12</td>
+            <td><a href="../user/310.html">Богачев Павел</a></td>
+              <td>Капитолий</td>
+            <td><span class="badge
+                badge-success
+                
+            ">69800</span></td>
+            <td>2.3</td>
+            <td>6980</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>13</td>
+            <td><a href="../user/325.html">Гайнулина Людмила</a></td>
+              <td>Трое в лодке, не считая собаки</td>
+            <td><span class="badge
+                badge-success
+                
+            ">65400</span></td>
+            <td>2.3</td>
+            <td>6540</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>14</td>
+            <td><a href="../user/1095.html">Нетесов Николай</a></td>
+              <td>Arslan's Bizarre Adventure</td>
+            <td><span class="badge
+                badge-success
+                
+            ">63300</span></td>
+            <td>2.3</td>
+            <td>6330</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>15</td>
+            <td><a href="../user/252.html">Хромов Кирилл</a></td>
+              <td>Yaranaika</td>
+            <td><span class="badge
+                badge-success
+                
+            ">54400</span></td>
+            <td>2.4</td>
+            <td>5440</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>16</td>
+            <td><a href="../user/907.html">Есипова Анна</a></td>
+              <td>Сяки Маки :3</td>
+            <td><span class="badge
+                badge-success
+                
+            ">51500</span></td>
+            <td>2.3</td>
+            <td>5150</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>17</td>
+            <td><a href="../user/1907.html">Карабанова Олеся</a></td>
+              <td>Москвичка и замкадыши</td>
+            <td><span class="badge
+                badge-success
+                
+            ">51200</span></td>
+            <td>2.2</td>
+            <td>5120</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>18</td>
+            <td><a href="../user/228.html">Черных Анастасия</a></td>
+              <td>Одна ошибка</td>
+            <td><span class="badge
+                badge-success
+                
+            ">47600</span></td>
+            <td>2.4</td>
+            <td>4760</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>19</td>
+            <td><a href="../user/579.html">Подмогильный Степан</a></td>
+              <td>Капитолий</td>
+            <td><span class="badge
+                badge-success
+                
+            ">41400</span></td>
+            <td>2.5</td>
+            <td>4140</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>20</td>
+            <td><a href="../user/874.html">Ткаченко Иван</a></td>
+              <td>Ван соу ван лав</td>
+            <td><span class="badge
+                badge-success
+                
+            ">39000</span></td>
+            <td>2.3</td>
+            <td>3900</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>21</td>
+            <td><a href="../user/227.html">Монаков Илья</a></td>
+              <td>Отчаянные канорезы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">32700</span></td>
+            <td>2.4</td>
+            <td>3270</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>22</td>
+            <td><a href="../user/564.html">Манджиев Арслан</a></td>
+              <td>Arslan's Bizarre Adventure</td>
+            <td><span class="badge
+                badge-success
+                
+            ">29500</span></td>
+            <td>2.3</td>
+            <td>2950</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>23</td>
+            <td><a href="../user/750.html">Ладыгин Владимир</a></td>
+              <td>Отчаянные канорезы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">24300</span></td>
+            <td>2.4</td>
+            <td>2430</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>24</td>
+            <td><a href="../user/2116.html">Дергунов Алексей</a></td>
+              <td>Вожделею умеренной опасности</td>
+            <td><span class="badge
+                badge-success
+                
+            ">20600</span></td>
+            <td>2.3</td>
+            <td>2060</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>25</td>
+            <td><a href="../user/307.html">Котлов Никита</a></td>
+              <td>Одна ошибка</td>
+            <td><span class="badge
+                badge-success
+                
+            ">9000</span></td>
+            <td>2.4</td>
+            <td>900</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>26</td>
+            <td><a href="../user/277.html">Афонин Михаил</a></td>
+              <td>Москвичка и замкадыши</td>
+            <td><span class="badge
+                badge-success
+                
+            ">2400</span></td>
+            <td>2.5</td>
+            <td>240</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>27</td>
+            <td><a href="../user/729.html">Аспидова Анастасия</a></td>
+              <td>Трое в лодке, не считая собаки</td>
+            <td><span class="badge
+                badge-success
+                
+            ">600</span></td>
+            <td>2.4</td>
+            <td>60</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>28</td>
+            <td><a href="../user/1113.html">Киселев Максим</a></td>
+              <td>Вожделею умеренной опасности</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-16100</span></td>
+            <td>2.6</td>
+            <td>-1610</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>29</td>
+            <td><a href="../user/977.html">Махов Кирилл</a></td>
+              <td>Ван соу ван лав</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-18900</span></td>
+            <td>2.7</td>
+            <td>-1890</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>30</td>
+            <td><a href="../user/231.html">Гришин Виктор</a></td>
+              <td>Сяки Маки :3</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-31700</span></td>
+            <td>2.6</td>
+            <td>-3170</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>31</td>
+            <td><a href="../user/756.html">Рожкова Анастасия</a></td>
+              <td>Отчаянные канорезы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-54700</span></td>
+            <td>2.9</td>
+            <td>-5470</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>32</td>
+            <td><a href="../user/235.html">Алексеева Ольга</a></td>
+              <td>Пупырка и Капибары пустоты</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-54700</span></td>
+            <td>2.6</td>
+            <td>-5470</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>33</td>
+            <td><a href="../user/571.html">Масуи Хидэ</a></td>
+              <td>Сяки Маки :3</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-56900</span></td>
+            <td>2.7</td>
+            <td>-5690</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>34</td>
+            <td><a href="../user/857.html">Игуменшева Елена</a></td>
+              <td>Якухайные ведьмы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-67700</span></td>
+            <td>2.7</td>
+            <td>-6770</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>35</td>
+            <td><a href="../user/32.html">Козловская Яна</a></td>
+              <td>Вожделею умеренной опасности</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-69600</span></td>
+            <td>2.7</td>
+            <td>-6960</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>36</td>
+            <td><a href="../user/230.html">Алешин Сергей</a></td>
+              <td>Пупырка и Капибары пустоты</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-87800</span></td>
+            <td>2.8</td>
+            <td>-8780</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>37</td>
+            <td><a href="../user/1649.html">Игнатьева Полина</a></td>
+              <td>Якухайные ведьмы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-95500</span></td>
+            <td>2.8</td>
+            <td>-9550</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>38</td>
+            <td><a href="../user/232.html">Ильина Дарья</a></td>
+              <td>Капитолий</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-99800</span></td>
+            <td>2.7</td>
+            <td>-9980</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>39</td>
+            <td><a href="../user/707.html">Чичигин Андрей</a></td>
+              <td>Москвичка и замкадыши</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-112800</span></td>
+            <td>3.1</td>
+            <td>-11280</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>40</td>
+            <td><a href="../user/298.html">Логинова Юлия</a></td>
+              <td>Вожделею умеренной опасности</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-136100</span></td>
+            <td>3</td>
+            <td>-13610</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>41</td>
+            <td><a href="../user/519.html">Мишакова Любовь</a></td>
+              <td>Трое в лодке, не считая собаки</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-137400</span></td>
+            <td>3</td>
+            <td>-13740</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>42</td>
+            <td><a href="../user/225.html">Плясунов Владислав</a></td>
+              <td>Пупырка и Капибары пустоты</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-138600</span></td>
+            <td>3</td>
+            <td>-13860</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>43</td>
+            <td><a href="../user/847.html">Гришина Ольга</a></td>
+              <td>Якухайные ведьмы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-140600</span></td>
+            <td>2.9</td>
+            <td>-14060</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>44</td>
+            <td><a href="../user/972.html">Головин Сергей</a></td>
+              <td>Ван соу ван лав</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-145000</span></td>
+            <td>3</td>
+            <td>-14500</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>45</td>
+            <td><a href="../user/730.html">Чичигина Наталья</a></td>
+              <td>Москвичка и замкадыши</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-154500</span></td>
+            <td>2.9</td>
+            <td>-15450</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>46</td>
+            <td><a href="../user/1609.html">Коробкин Александр</a></td>
+              <td>Якухайные ведьмы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-158300</span></td>
+            <td>3.1</td>
+            <td>-15830</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>47</td>
+            <td><a href="../user/1790.html">Мизин Сергей</a></td>
+              <td>Yaranaika</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-218100</span></td>
+            <td>3.2</td>
+            <td>-21810</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>48</td>
+            <td><a href="../user/290.html">Петрущенко Сергей</a></td>
+              <td>Отчаянные канорезы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-249200</span></td>
+            <td>3.3</td>
+            <td>-24920</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

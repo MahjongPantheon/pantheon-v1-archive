@@ -1,0 +1,1634 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Рейтинг - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid194.html" class="nav-link">ERMC Social play</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style>
+    .rating-flex-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .players-options{
+      margin-left: 40px;
+    }
+    .row-min-was-played:nth-of-type(even) {
+        background-color: rgba(0, 255, 129, 0.12);
+    }
+    .row-min-was-played:nth-of-type(odd) {
+        background-color: rgba(96, 201, 149, 0.27) !important;
+    }
+</style>
+
+<script>
+    function onChange(showPlayers) {
+      let href = new URL(location.href);
+      href.searchParams.set('players', showPlayers);
+      location.href=href;
+    }
+</script>
+
+<div class="rating-flex-title">
+  <h3>Рейтинг</h3>
+</div>
+<br>
+
+
+
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>#</th>
+            <th><a href="index.htm?sort=name">Игрок</a></th>
+            <th><a href="index-1.htm?sort=rating">Рейтинговые очки</a></th>
+            <th><a href="index-2.htm?sort=avg_place">Среднее место</a><span class="icon-arrow-up"></span></th>
+            <th><a href="index-3.htm?sort=avg_score">Средние очки</a></th>
+            <th>Сыграно игр</th>
+        </tr>
+        <tr class="">
+            <td>1</td>
+            <td><a href="../user/1301.html">Michael van der Sluijs</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">23000</span></td>
+            <td>1</td>
+            <td>23000</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>2</td>
+            <td><a href="../user/1307.html">Jasper Germeys</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">66100</span></td>
+            <td>1.5</td>
+            <td>33050</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>3</td>
+            <td><a href="../user/1279.html">Vladislav Plyasunov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">45400</span></td>
+            <td>1.5</td>
+            <td>22700</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>4</td>
+            <td><a href="../user/1276.html">Pavel Sorokin</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">17300</span></td>
+            <td>2</td>
+            <td>8650</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>5</td>
+            <td><a href="../user/1273.html">Yulia Loginova</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">12200</span></td>
+            <td>2</td>
+            <td>6100</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>6</td>
+            <td><a href="../user/1270.html">Kirill Khromov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">20600</span></td>
+            <td>2.3333</td>
+            <td>6867</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>7</td>
+            <td><a href="../user/1271.html">Natalya Uskova</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-1100</span></td>
+            <td>2.5</td>
+            <td>-550</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>8</td>
+            <td><a href="../user/1278.html">Dinara Gabdulina</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-2800</span></td>
+            <td>2.5</td>
+            <td>-1400</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>9</td>
+            <td><a href="../user/1223.html">Gemma Sakamoto</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-700</span></td>
+            <td>3</td>
+            <td>-700</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>10</td>
+            <td><a href="../user/1275.html">Vladimir Nadanyan</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-13400</span></td>
+            <td>3</td>
+            <td>-6700</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>11</td>
+            <td><a href="../user/1269.html">Sergey Aleshin</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-18700</span></td>
+            <td>3</td>
+            <td>-18700</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>12</td>
+            <td><a href="../user/1292.html">Ans Hoogland</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-28800</span></td>
+            <td>4</td>
+            <td>-28800</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>13</td>
+            <td><a href="../user/1257.html">Alexey Leontiev</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-33400</span></td>
+            <td>4</td>
+            <td>-33400</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>14</td>
+            <td><a href="../user/1225.html">John Duckworth</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-34100</span></td>
+            <td>4</td>
+            <td>-34100</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>15</td>
+            <td><a href="../user/1260.html">Dmitry Sirotkin</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-51600</span></td>
+            <td>4</td>
+            <td>-51600</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>16</td>
+            <td><a href="../user/1182.html">Łukasz Grzybowski</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>17</td>
+            <td><a href="../user/1183.html">Jakub Bacic</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>18</td>
+            <td><a href="../user/1184.html">Miłosz Meller</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>19</td>
+            <td><a href="../user/1185.html">Olga Igarashi</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>20</td>
+            <td><a href="../user/1186.html">Mateusz Woźniak</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>21</td>
+            <td><a href="../user/1187.html">Jacek Borysiak</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>22</td>
+            <td><a href="../user/1188.html">Nina Popławska</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>23</td>
+            <td><a href="../user/1189.html">Tatsuya Igarashi</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>24</td>
+            <td><a href="../user/1190.html">Dominik Kolenda</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>25</td>
+            <td><a href="../user/1191.html">Justyna Kruczek</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>26</td>
+            <td><a href="../user/1192.html">Martyna Jędryczka</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>27</td>
+            <td><a href="../user/1193.html">Roman Powęzka</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>28</td>
+            <td><a href="../user/1194.html">Tomasz Powęzka</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>29</td>
+            <td><a href="../user/1195.html">Lena Weinguny</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>30</td>
+            <td><a href="../user/1196.html">Dominik Hammerl</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>31</td>
+            <td><a href="../user/1197.html">Alexander Doppelhofer</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>32</td>
+            <td><a href="../user/1198.html">Birgitt Rupp</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>33</td>
+            <td><a href="../user/1199.html">Michael Dusleag</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>34</td>
+            <td><a href="../user/1200.html">Manuel Tomisser</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>35</td>
+            <td><a href="../user/1201.html">Matthias Trinkl</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>36</td>
+            <td><a href="../user/1202.html">Lukas Gerhold</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>37</td>
+            <td><a href="../user/1203.html">Krisztian Deak</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>38</td>
+            <td><a href="../user/1204.html">Juraj JERGUŠ</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>39</td>
+            <td><a href="../user/1205.html">Matej LABAŠ</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>40</td>
+            <td><a href="../user/1206.html">Tomáš Širon</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>41</td>
+            <td><a href="../user/1207.html">Raúl Ríos Navarro</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>42</td>
+            <td><a href="../user/1208.html">Glen Ivar Husom</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>43</td>
+            <td><a href="../user/1209.html">Luc Humbert</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>44</td>
+            <td><a href="../user/1210.html">Peter Beese</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>45</td>
+            <td><a href="../user/1211.html">Axel Eschenburg</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>46</td>
+            <td><a href="../user/1212.html">Daniel Gahler</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>47</td>
+            <td><a href="../user/1213.html">Timur Hahn</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>48</td>
+            <td><a href="../user/1214.html">Waldemar Laube</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>49</td>
+            <td><a href="../user/1215.html">Marcus Völker</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>50</td>
+            <td><a href="../user/1216.html">Ilka Stummeyer</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>51</td>
+            <td><a href="../user/1217.html">Philip Bielby</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>52</td>
+            <td><a href="../user/1218.html">David Clarke</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>53</td>
+            <td><a href="../user/1219.html">Michael Donaghy</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>54</td>
+            <td><a href="../user/1220.html">Tony Haley</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>55</td>
+            <td><a href="../user/1221.html">Nick Dyer</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>56</td>
+            <td><a href="../user/1222.html">Paola Bungaro</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>57</td>
+            <td><a href="../user/1224.html">Martin Lester</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>58</td>
+            <td><a href="../user/1226.html">Cedric Aguerre</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>59</td>
+            <td><a href="../user/1227.html">Mathieu Chambe</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>60</td>
+            <td><a href="../user/1228.html">Valentin Courtois</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>61</td>
+            <td><a href="../user/1229.html">Maati Raissi</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>62</td>
+            <td><a href="../user/1230.html">Sandra Berthommier</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>63</td>
+            <td><a href="../user/1231.html">Angelo Maolet</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>64</td>
+            <td><a href="../user/1232.html">Chen Chaolei</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>65</td>
+            <td><a href="../user/1233.html">Julien Fouques</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>66</td>
+            <td><a href="../user/1234.html">Joël Ratsimandresy</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>67</td>
+            <td><a href="../user/1235.html">Ombretta Tassinari</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>68</td>
+            <td><a href="../user/1236.html">Marco Montebelli</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>69</td>
+            <td><a href="../user/1237.html">Domenico Sansevieri</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>70</td>
+            <td><a href="../user/1238.html">Alan Coli</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>71</td>
+            <td><a href="../user/1239.html">Massimo Crivaro</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>72</td>
+            <td><a href="../user/1240.html">Janne Eskola</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>73</td>
+            <td><a href="../user/1241.html">Ossi Hirvola</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>74</td>
+            <td><a href="../user/1242.html">Kasper Kivimaki</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>75</td>
+            <td><a href="../user/1243.html">Einari Lavaste</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>76</td>
+            <td><a href="../user/1244.html">Konsta Lensu</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>77</td>
+            <td><a href="../user/1245.html">Yuanqi Shan</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>78</td>
+            <td><a href="../user/1246.html">Vilhelmiina Viinikka</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>79</td>
+            <td><a href="../user/1247.html">Samu Viitanen</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>80</td>
+            <td><a href="../user/1248.html">Morten Andersen</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>81</td>
+            <td><a href="../user/1249.html">Claus Christensen</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>82</td>
+            <td><a href="../user/1250.html">Sheila Hansen</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>83</td>
+            <td><a href="../user/1251.html">Eigo Kawatani</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>84</td>
+            <td><a href="../user/1252.html">Henrik Leth</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>85</td>
+            <td><a href="../user/1253.html">Jesper Nøhr</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>86</td>
+            <td><a href="../user/1254.html">Lars Therkelsen</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>87</td>
+            <td><a href="../user/1255.html">Mikhail Lugovkin</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>88</td>
+            <td><a href="../user/1256.html">Pavel Bogachev</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>89</td>
+            <td><a href="../user/1258.html">Daria Ilina</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>90</td>
+            <td><a href="../user/1259.html">Sergey Petrushchenko</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>91</td>
+            <td><a href="../user/1261.html">Arslan Mandjiev</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>92</td>
+            <td><a href="../user/1262.html">Oxana Vyshivannaya</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>93</td>
+            <td><a href="../user/1263.html">Dmitriy Novikov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>94</td>
+            <td><a href="../user/1264.html">Olga Alekseeva</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>95</td>
+            <td><a href="../user/1265.html">Nikita Tkachenko</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>96</td>
+            <td><a href="../user/1266.html">Elena Titova</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>97</td>
+            <td><a href="../user/1267.html">Elena Goryacheva</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>98</td>
+            <td><a href="../user/1268.html">Nikita Kotlov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>99</td>
+            <td><a href="../user/1272.html">Vladimir Zayakin</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>100</td>
+            <td><a href="../user/1274.html">Yulia Bykova</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>101</td>
+            <td><a href="../user/1277.html">Artem Titov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>102</td>
+            <td><a href="../user/1280.html">Ilya Monakov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>103</td>
+            <td><a href="../user/1281.html">Vladimir Bogdanov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>104</td>
+            <td><a href="../user/1282.html">Radka Pernicová</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>105</td>
+            <td><a href="../user/1283.html">Maksym Ivanov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>106</td>
+            <td><a href="../user/1284.html">Danylo Shatokhin</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>107</td>
+            <td><a href="../user/1285.html">Anna Zubenko</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>108</td>
+            <td><a href="../user/1286.html">Cyril Boichenko</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>109</td>
+            <td><a href="../user/1287.html">Valerii Bohdanov</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>110</td>
+            <td><a href="../user/1288.html">Uladzimir Tananushka</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>111</td>
+            <td><a href="../user/1289.html">Pavel Verebei</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>112</td>
+            <td><a href="../user/1290.html">Sérgio Lima</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>113</td>
+            <td><a href="../user/1291.html">Pauline van der Linden</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>114</td>
+            <td><a href="../user/1293.html">Désirée van Heemskerk</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>115</td>
+            <td><a href="../user/1294.html">Gerda van Oorschot</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>116</td>
+            <td><a href="../user/1295.html">Eveline Broers</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>117</td>
+            <td><a href="../user/1296.html">Marianne Croeze</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>118</td>
+            <td><a href="../user/1297.html">Cees van den Brink</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>119</td>
+            <td><a href="../user/1298.html">Jacqueline Oudshoorn</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>120</td>
+            <td><a href="../user/1299.html">Nel Hofman</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>121</td>
+            <td><a href="../user/1300.html">Anneke Keyl</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>122</td>
+            <td><a href="../user/1302.html">Jinbi Jin</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>123</td>
+            <td><a href="../user/1303.html">Reilly Brands</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>124</td>
+            <td><a href="../user/1304.html">Bert Claessen</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>125</td>
+            <td><a href="../user/1305.html">Janco Onnink</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>126</td>
+            <td><a href="../user/1306.html">Foppe Bakker</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>127</td>
+            <td><a href="../user/1308.html">Anna Titova</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>128</td>
+            <td><a href="../user/1309.html">Niklas Johansson</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>129</td>
+            <td><a href="../user/1310.html">Stefan Persson</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>130</td>
+            <td><a href="../user/1311.html">Chris de Roock</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>131</td>
+            <td><a href="../user/1312.html">Masaharu Tomotake</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>132</td>
+            <td><a href="../user/1313.html">Hiroshi Yamai</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>133</td>
+            <td><a href="../user/1314.html">Anthony To</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>134</td>
+            <td><a href="../user/1315.html">Kevin Lin</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>135</td>
+            <td><a href="../user/1316.html">Kinyan Lui</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>136</td>
+            <td><a href="../user/1317.html">Daniel Moreno</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>137</td>
+            <td><a href="../user/1318.html">Dizon Edwin</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>138</td>
+            <td><a href="../user/1319.html">Pozniak Claire</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>139</td>
+            <td><a href="../user/1320.html">Shane Zamora</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>140</td>
+            <td><a href="../user/1321.html">Wenlong LI</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

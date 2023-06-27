@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Рейтинг - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid70.html" class="nav-link">Cyprus Riichi Club</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style>
+    .rating-flex-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .players-options{
+      margin-left: 40px;
+    }
+    .row-min-was-played:nth-of-type(even) {
+        background-color: rgba(0, 255, 129, 0.12);
+    }
+    .row-min-was-played:nth-of-type(odd) {
+        background-color: rgba(96, 201, 149, 0.27) !important;
+    }
+</style>
+
+<script>
+    function onChange(showPlayers) {
+      let href = new URL(location.href);
+      href.searchParams.set('players', showPlayers);
+      location.href=href;
+    }
+</script>
+
+<div class="rating-flex-title">
+  <h3>Рейтинг</h3>
+</div>
+<br>
+
+
+
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>#</th>
+            <th><a href="index.htm?sort=name">Игрок</a></th>
+            <th><a href="index-1.htm?sort=rating">Рейтинговые очки</a><span class="icon-arrow-down"></span></th>
+            <th><a href="index-2.htm?sort=avg_place">Среднее место</a></th>
+            <th><a href="index-3.htm?sort=avg_score">Средние очки</a></th>
+            <th>Сыграно игр</th>
+        </tr>
+        <tr class="">
+            <td>1</td>
+            <td><a href="../user/642.html">Petros Hadjipieris</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">497400</span></td>
+            <td>2.1739</td>
+            <td>7209</td>
+            <td>69</td>
+        </tr>
+        <tr class="">
+            <td>2</td>
+            <td><a href="../user/641.html">Antonis Smyrnios</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">177600</span></td>
+            <td>2.275</td>
+            <td>4440</td>
+            <td>40</td>
+        </tr>
+        <tr class="">
+            <td>3</td>
+            <td><a href="../user/644.html">Andreas Christodoulou</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">152800</span></td>
+            <td>2.2143</td>
+            <td>10914</td>
+            <td>14</td>
+        </tr>
+        <tr class="">
+            <td>4</td>
+            <td><a href="../user/767.html">Michael kiprianou</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">102200</span></td>
+            <td>1.8182</td>
+            <td>9291</td>
+            <td>11</td>
+        </tr>
+        <tr class="">
+            <td>5</td>
+            <td><a href="../user/360.html">Сорокин Павел</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">97600</span></td>
+            <td>1.8571</td>
+            <td>13943</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>6</td>
+            <td><a href="../user/854.html">Panos i</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">41100</span></td>
+            <td>2.1667</td>
+            <td>6850</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>7</td>
+            <td><a href="../user/652.html">Michalis Gemenaris</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">40700</span></td>
+            <td>2.5714</td>
+            <td>5814</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>8</td>
+            <td><a href="../user/1053.html">Salomi</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">37800</span></td>
+            <td>2</td>
+            <td>9450</td>
+            <td>4</td>
+        </tr>
+        <tr class="">
+            <td>9</td>
+            <td><a href="../user/1049.html">antriae</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">23200</span></td>
+            <td>2.4</td>
+            <td>4640</td>
+            <td>5</td>
+        </tr>
+        <tr class="">
+            <td>10</td>
+            <td><a href="../user/782.html">Zivanas N</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">20900</span></td>
+            <td>1</td>
+            <td>20900</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>11</td>
+            <td><a href="../user/672.html">Michalis Papas</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">17200</span></td>
+            <td>2.25</td>
+            <td>2150</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>12</td>
+            <td><a href="../user/1519.html">Ким Катерина</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">7300</span></td>
+            <td>2</td>
+            <td>7300</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>13</td>
+            <td><a href="../user/713.html">Stefanos vasilaras</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">3600</span></td>
+            <td>2.2857</td>
+            <td>514</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>14</td>
+            <td><a href="../user/646.html">Antranik Zakarian</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-3400</span></td>
+            <td>3</td>
+            <td>-3400</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>15</td>
+            <td><a href="../user/1520.html">Ким Николай</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-7200</span></td>
+            <td>3</td>
+            <td>-7200</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>16</td>
+            <td><a href="../user/654.html">Andreas Savvides</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-7400</span></td>
+            <td>2.6667</td>
+            <td>-2467</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>17</td>
+            <td><a href="../user/673.html">Kyriakos antoniou</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-13100</span></td>
+            <td>2.6154</td>
+            <td>-1008</td>
+            <td>13</td>
+        </tr>
+        <tr class="">
+            <td>18</td>
+            <td><a href="../user/768.html">Krikor</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-16000</span></td>
+            <td>3.3333</td>
+            <td>-5333</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>19</td>
+            <td><a href="../user/649.html">Christos  Alkibiadous</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-16600</span></td>
+            <td>2.5</td>
+            <td>-553</td>
+            <td>30</td>
+        </tr>
+        <tr class="">
+            <td>20</td>
+            <td><a href="../user/764.html">Adamos papadopoulos</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-18400</span></td>
+            <td>3</td>
+            <td>-6133</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>21</td>
+            <td><a href="../user/647.html">Dmitry</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-28700</span></td>
+            <td>2.6667</td>
+            <td>-9567</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>22</td>
+            <td><a href="../user/714.html">Spyros</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-31600</span></td>
+            <td>2.8</td>
+            <td>-3160</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>23</td>
+            <td><a href="../user/1052.html">thea</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-34300</span></td>
+            <td>4</td>
+            <td>-34300</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>24</td>
+            <td><a href="../user/745.html">Koupepides</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-34700</span></td>
+            <td>4</td>
+            <td>-34700</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>25</td>
+            <td><a href="../user/1119.html">Tsounamis</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-35200</span></td>
+            <td>4</td>
+            <td>-35200</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>26</td>
+            <td><a href="../user/639.html">Kirill Nikolaev</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-39300</span></td>
+            <td>2.5405</td>
+            <td>-1062</td>
+            <td>37</td>
+        </tr>
+        <tr class="">
+            <td>27</td>
+            <td><a href="../user/1059.html">Sozumaki</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-44600</span></td>
+            <td>4</td>
+            <td>-44600</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>28</td>
+            <td><a href="../user/765.html">Ioanna grigoriou</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-45500</span></td>
+            <td>3</td>
+            <td>-15167</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>29</td>
+            <td><a href="../user/1045.html">Mitseas</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-50400</span></td>
+            <td>3</td>
+            <td>-10080</td>
+            <td>5</td>
+        </tr>
+        <tr class="">
+            <td>30</td>
+            <td><a href="../user/658.html">Andreas tsikouris</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-65500</span></td>
+            <td>2.4571</td>
+            <td>-1871</td>
+            <td>35</td>
+        </tr>
+        <tr class="">
+            <td>31</td>
+            <td><a href="../user/648.html">Alex Modestou</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-66300</span></td>
+            <td>3</td>
+            <td>-7367</td>
+            <td>9</td>
+        </tr>
+        <tr class="">
+            <td>32</td>
+            <td><a href="../user/712.html">Zandi</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-69000</span></td>
+            <td>3</td>
+            <td>-5750</td>
+            <td>12</td>
+        </tr>
+        <tr class="">
+            <td>33</td>
+            <td><a href="../user/643.html">Alex Siandris</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-75100</span></td>
+            <td>2.6875</td>
+            <td>-4694</td>
+            <td>16</td>
+        </tr>
+        <tr class="">
+            <td>34</td>
+            <td><a href="../user/479.html">Габдуллина Динара</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-94700</span></td>
+            <td>3.1429</td>
+            <td>-13529</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>35</td>
+            <td><a href="../user/754.html">Alexandrak</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-146500</span></td>
+            <td>3</td>
+            <td>-14650</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>36</td>
+            <td><a href="../user/752.html">Xenios</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-175400</span></td>
+            <td>3.3333</td>
+            <td>-14617</td>
+            <td>12</td>
+        </tr>
+        <tr class="">
+            <td>37</td>
+            <td><a href="../user/651.html">Efstathios Papafotis</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-220500</span></td>
+            <td>2.5897</td>
+            <td>-5654</td>
+            <td>39</td>
+        </tr>
+        <tr class="">
+            <td>38</td>
+            <td><a href="../user/650.html">Neithan</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>39</td>
+            <td><a href="../user/1048.html">Suntzu</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

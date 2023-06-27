@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Рейтинг - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid345.html" class="nav-link">IORMC Qual.</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style>
+    .rating-flex-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .players-options{
+      margin-left: 40px;
+    }
+    .row-min-was-played:nth-of-type(even) {
+        background-color: rgba(0, 255, 129, 0.12);
+    }
+    .row-min-was-played:nth-of-type(odd) {
+        background-color: rgba(96, 201, 149, 0.27) !important;
+    }
+</style>
+
+<script>
+    function onChange(showPlayers) {
+      let href = new URL(location.href);
+      href.searchParams.set('players', showPlayers);
+      location.href=href;
+    }
+</script>
+
+<div class="rating-flex-title">
+  <h3>Рейтинг</h3>
+</div>
+<br>
+
+
+
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>#</th>
+            <th><a href="index.htm?sort=name">Игрок</a></th>
+            <th><a href="index-1.htm?sort=rating">Рейтинговые очки</a><span class="icon-arrow-down"></span></th>
+            <th><a href="index-2.htm?sort=avg_place">Среднее место</a></th>
+            <th><a href="index-3.htm?sort=avg_score">Средние очки</a></th>
+            <th>Сыграно игр</th>
+        </tr>
+        <tr class="">
+            <td>1</td>
+            <td><a href="../user/571.html">Масуи Хидэ</a> (MASUI)</td>
+            <td><span class="badge
+                badge-success
+                
+            ">110200</span></td>
+            <td>2.1667</td>
+            <td>18367</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>2</td>
+            <td><a href="../user/817.html">Подлипаев Сергей</a> (q271828)</td>
+            <td><span class="badge
+                badge-success
+                
+            ">93800</span></td>
+            <td>2.1667</td>
+            <td>15633</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>3</td>
+            <td><a href="../user/1783.html">Дронов Александр</a> (Asco)</td>
+            <td><span class="badge
+                badge-success
+                
+            ">88900</span></td>
+            <td>2.1667</td>
+            <td>14817</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>4</td>
+            <td><a href="../user/564.html">Манджиев Арслан</a> (アルスラーン)</td>
+            <td><span class="badge
+                badge-success
+                
+            ">45900</span></td>
+            <td>2.3333</td>
+            <td>7650</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>5</td>
+            <td><a href="../user/432.html">Поляков Кирилл</a> (Пёс002)</td>
+            <td><span class="badge
+                badge-success
+                
+            ">8500</span></td>
+            <td>2.3333</td>
+            <td>1417</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>6</td>
+            <td><a href="../user/733.html">Денисов Евгений</a> (Gato71)</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-7200</span></td>
+            <td>2.3333</td>
+            <td>-1200</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>7</td>
+            <td><a href="../user/769.html">Чуров Петр</a> (PEC)</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-27700</span></td>
+            <td>2.6667</td>
+            <td>-4617</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>8</td>
+            <td><a href="../user/391.html">Рогозин Леонид</a> (LR)</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-31900</span></td>
+            <td>2.6667</td>
+            <td>-5317</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>9</td>
+            <td><a href="../user/20.html">Карпов Александр</a> (th_)</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-52200</span></td>
+            <td>2.6667</td>
+            <td>-8700</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>10</td>
+            <td><a href="../user/218.html">Борзоногов Виталий</a> (ヴィタリー)</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-54300</span></td>
+            <td>2.6667</td>
+            <td>-9050</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>11</td>
+            <td><a href="../user/254.html">Хрусталев Арсений</a> (Pilatus)</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-54900</span></td>
+            <td>2.5</td>
+            <td>-9150</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>12</td>
+            <td><a href="../user/570.html">Курмаев Ренат</a> (Rebus)</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-119100</span></td>
+            <td>3.3333</td>
+            <td>-19850</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

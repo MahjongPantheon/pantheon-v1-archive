@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Рейтинг - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid212.html" class="nav-link">Cologne club games</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style>
+    .rating-flex-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .players-options{
+      margin-left: 40px;
+    }
+    .row-min-was-played:nth-of-type(even) {
+        background-color: rgba(0, 255, 129, 0.12);
+    }
+    .row-min-was-played:nth-of-type(odd) {
+        background-color: rgba(96, 201, 149, 0.27) !important;
+    }
+</style>
+
+<script>
+    function onChange(showPlayers) {
+      let href = new URL(location.href);
+      href.searchParams.set('players', showPlayers);
+      location.href=href;
+    }
+</script>
+
+<div class="rating-flex-title">
+  <h3>Рейтинг</h3>
+</div>
+<br>
+
+
+
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>#</th>
+            <th><a href="index.htm?sort=name">Игрок</a></th>
+            <th><a href="index-1.htm?sort=rating">Рейтинговые очки</a><span class="icon-arrow-down"></span></th>
+            <th><a href="index-2.htm?sort=avg_place">Среднее место</a></th>
+            <th><a href="index-3.htm?sort=avg_score">Средние очки</a></th>
+            <th>Сыграно игр</th>
+        </tr>
+        <tr class="">
+            <td>1</td>
+            <td><a href="../user/2011.html">Manuel K.</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">366600</span></td>
+            <td>2.321</td>
+            <td>4526</td>
+            <td>81</td>
+        </tr>
+        <tr class="">
+            <td>2</td>
+            <td><a href="../user/2012.html">Jonas F.</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">188000</span></td>
+            <td>2.4737</td>
+            <td>2474</td>
+            <td>76</td>
+        </tr>
+        <tr class="">
+            <td>3</td>
+            <td><a href="../user/2014.html">Hiroshi K.</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-231900</span></td>
+            <td>2.5753</td>
+            <td>-3177</td>
+            <td>73</td>
+        </tr>
+        <tr class="">
+            <td>4</td>
+            <td><a href="../user/2010.html">Madeleine P.</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-336000</span></td>
+            <td>2.7255</td>
+            <td>-6588</td>
+            <td>51</td>
+        </tr>
+        <tr class="">
+            <td>5</td>
+            <td><a href="../user/1537.html">Chung Thai</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-92900</span></td>
+            <td>2.551</td>
+            <td>-1896</td>
+            <td>49</td>
+        </tr>
+        <tr class="">
+            <td>6</td>
+            <td><a href="../user/1538.html">Fränk Tobias</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-310700</span></td>
+            <td>2.8529</td>
+            <td>-9138</td>
+            <td>34</td>
+        </tr>
+        <tr class="">
+            <td>7</td>
+            <td><a href="../user/1176.html">Schlich Manuel</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">118600</span></td>
+            <td>2.2174</td>
+            <td>5157</td>
+            <td>23</td>
+        </tr>
+        <tr class="">
+            <td>8</td>
+            <td><a href="../user/2013.html">Sven M.</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">222700</span></td>
+            <td>1.8125</td>
+            <td>13919</td>
+            <td>16</td>
+        </tr>
+        <tr class="">
+            <td>9</td>
+            <td><a href="../user/1213.html">Timur Hahn</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">10800</span></td>
+            <td>2.5714</td>
+            <td>771</td>
+            <td>14</td>
+        </tr>
+        <tr class="">
+            <td>10</td>
+            <td><a href="../user/1605.html">Pieter Potmeer</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">120800</span></td>
+            <td>2.0769</td>
+            <td>9292</td>
+            <td>13</td>
+        </tr>
+        <tr class="">
+            <td>11</td>
+            <td><a href="../user/1539.html">Jonas Frings</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">173000</span></td>
+            <td>1.9167</td>
+            <td>14417</td>
+            <td>12</td>
+        </tr>
+        <tr class="">
+            <td>12</td>
+            <td><a href="../user/2054.html">Ken I.</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-246700</span></td>
+            <td>3.5</td>
+            <td>-24670</td>
+            <td>10</td>
+        </tr>
+        <tr class="">
+            <td>13</td>
+            <td><a href="../user/1560.html">Mamaril Sven</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">7400</span></td>
+            <td>2.4286</td>
+            <td>1057</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>14</td>
+            <td><a href="../user/1195.html">Lena Weinguny</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">40800</span></td>
+            <td>2.1667</td>
+            <td>6800</td>
+            <td>6</td>
+        </tr>
+        <tr class="">
+            <td>15</td>
+            <td><a href="../user/2047.html">Björn S.</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">33300</span></td>
+            <td>2.25</td>
+            <td>8325</td>
+            <td>4</td>
+        </tr>
+        <tr class="">
+            <td>16</td>
+            <td><a href="../user/1536.html">Jan Wilhelm</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-13000</span></td>
+            <td>2.75</td>
+            <td>-3250</td>
+            <td>4</td>
+        </tr>
+        <tr class="">
+            <td>17</td>
+            <td><a href="../user/1540.html">Nico Linnemann</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-30200</span></td>
+            <td>2.5</td>
+            <td>-7550</td>
+            <td>4</td>
+        </tr>
+        <tr class="">
+            <td>18</td>
+            <td><a href="../user/2138.html">Blundertaker</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-50400</span></td>
+            <td>3</td>
+            <td>-16800</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>19</td>
+            <td><a href="../user/2055.html">Simon G.</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-112000</span></td>
+            <td>4</td>
+            <td>-37333</td>
+            <td>3</td>
+        </tr>
+        <tr class="">
+            <td>20</td>
+            <td><a href="../user/1541.html">Kai Böse</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">50900</span></td>
+            <td>1.5</td>
+            <td>25450</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>21</td>
+            <td><a href="../user/2139.html">Manuel T.</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">39900</span></td>
+            <td>2.5</td>
+            <td>19950</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>22</td>
+            <td><a href="../user/2126.html">Piti P.</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-600</span></td>
+            <td>2.5</td>
+            <td>-300</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>23</td>
+            <td><a href="../user/1594.html">Lukas Schmalz</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-30600</span></td>
+            <td>3.5</td>
+            <td>-15300</td>
+            <td>2</td>
+        </tr>
+        <tr class="">
+            <td>24</td>
+            <td><a href="../user/1543.html">Stefanie Wehmeyer</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-17800</span></td>
+            <td>3</td>
+            <td>-17800</td>
+            <td>1</td>
+        </tr>
+        <tr class="">
+            <td>25</td>
+            <td><a href="../user/2056.html">Huang K.</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>26</td>
+            <td><a href="../user/2166.html">Tian H.</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>27</td>
+            <td><a href="../user/2167.html">Zheming J.</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="">
+            <td>28</td>
+            <td><a href="../user/2168.html">Leonie </a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">0</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

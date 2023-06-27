@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Таймер - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../eid318.html" class="nav-link">Турнир Надежды</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="stat.html" class="nav-link">Рейтинг</a></li>
+                    <li class="nav-item"><a href="timer.html" target="_blank" class="nav-link">Таймер и рассадка</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style type="text/css">
+    span.success {
+        color: #393;
+    }
+
+    span.fail {
+        color: #c44;
+    }
+
+    .navbar-inner {
+        display: none;
+    }
+
+    .timer, .timer > * {
+        font-size: 300px;
+        font-family: monospace;
+        font-weight: bold;
+        margin-top: 200px;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .timer.mini, .timer.mini > * {
+        font-size: 100px;
+        margin-top: 0;
+    }
+</style>
+
+<script type="text/javascript">
+    !function () {
+        var soundBeforeEnd = new Audio("/assets/5min.wav"); // buffers automatically when created
+        var soundOnEnd = new Audio("/assets/endgame.wav"); // buffers automatically when created
+        var initialTime = '00:00'.split(':');
+        var minutes = parseInt(initialTime[0]);
+        var seconds = parseInt(initialTime[1]) / 10;
+        var redZone = '' === '1';
+        var yellowZone = '1' === '1';
+        var waiting = '';
+        var timer;
+
+        $(function () {
+            runTimer();
+            if (minutes <= 0 || (!minutes && !seconds)) {
+                $('.timer').addClass('mini');
+                $('.seating').show();
+            }
+            timer = window.setInterval(runTimer, 10000);
+        });
+
+        function formatTime(minutes, seconds) {
+            var addedZero = '';
+            if (seconds < 1) {
+                addedZero = '0';
+            }
+            return minutes + ':' + addedZero + seconds * 10;
+        }
+
+        function checkRedZone(minutes) {
+            if (redZone && minutes < 0) {
+                $('#time').css({color: '#f55'});
+                if (soundBeforeEnd) {
+                    soundBeforeEnd.play();
+                    soundBeforeEnd = false; // play the sound only once
+                }
+            }
+        }
+
+        function checkYellowZone(minutes) {
+            if (yellowZone && minutes < 15) {
+                $('#time').css({backgroundColor: '#ff5'});
+                if (soundBeforeEnd) {
+                    soundBeforeEnd.play();
+                    soundBeforeEnd = false; // play the sound only once
+                }
+            }
+        }
+
+        function checkSeating(minutes) {
+            if (minutes >= (85) ) {
+                $('.timer').addClass('mini');
+                $('.seating').show();
+            } else {
+                $('.timer').removeClass('mini');
+                $('.seating').hide();
+            }
+        }
+
+        function stopTimer() {
+            window.clearInterval(timer);
+            $('#time').html('СТОП!');
+            $('.timer').addClass('mini');
+            $('.seating').show();
+
+            if (soundOnEnd) {
+                soundOnEnd.play();
+                soundOnEnd = false; // play the sound only once
+            }
+        }
+
+        function runTimer() {
+            if (waiting) {
+                return;
+            }
+
+            if (seconds === 0) {
+                minutes--;
+                seconds = 6; // just in case
+            }
+
+            seconds--;
+            checkRedZone(minutes);
+            checkYellowZone(minutes);
+
+            if (minutes < 0) {
+                stopTimer();
+            } else {
+                $('#time').html(formatTime(minutes, seconds));
+            }
+
+            checkSeating(minutes);
+        }
+    }();
+</script>
+
+        <div class="timer">
+            <span id="time">00:00</span>
+        </div>
+    <div class="seating">
+        <hr>
+        <h3>РАССАДКА</h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>Стол №</th>
+                <th>ВОСТОК</th>
+                <th>ЮГ</th>
+                <th>ЗАПАД</th>
+                <th>СЕВЕР</th>
+            </tr>
+                <tr>
+                    <td>1</td>
+                        <td>Тананушка Уладзимир <span class="badge badge-success">20800</span></td>
+                        <td>Кульгаева Варвара <span class="badge badge-success">137900</span></td>
+                        <td>Юречко Алексей <span class="badge badge-success">106700</span></td>
+                        <td>Кабак Юрий <span class="badge badge-success">81500</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                        <td>Полюхович Александр <span class="badge badge-danger">-11400</span></td>
+                        <td>Бижанова Разия <span class="badge badge-success">52200</span></td>
+                        <td>Цывинский Сергей <span class="badge badge-success">25000</span></td>
+                        <td>Амелевич Максим <span class="badge badge-success">400</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                        <td>Шарах Тимофей <span class="badge badge-danger">-48700</span></td>
+                        <td>Бубнович Олег <span class="badge badge-danger">-16600</span></td>
+                        <td>Бутрис Сергей <span class="badge badge-danger">-6500</span></td>
+                        <td>Молчанов Алексей <span class="badge badge-danger">-19900</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                        <td>Кирничный Илья <span class="badge badge-danger">-115200</span></td>
+                        <td>Григорук Настя <span class="badge badge-danger">-102900</span></td>
+                        <td>Jenkins <span class="badge badge-danger">-55100</span></td>
+                        <td>Хвалюк Полина <span class="badge badge-danger">-68200</span></td>
+                </tr>
+        </table>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

@@ -1,0 +1,1019 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Рейтинг - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid57.html" class="nav-link">VI Russian Riichi Championship</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+                    <li class="nav-item"><a href="../timer.html" target="_blank" class="nav-link">Таймер и рассадка</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style>
+    .rating-flex-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .players-options{
+      margin-left: 40px;
+    }
+    .row-min-was-played:nth-of-type(even) {
+        background-color: rgba(0, 255, 129, 0.12);
+    }
+    .row-min-was-played:nth-of-type(odd) {
+        background-color: rgba(96, 201, 149, 0.27) !important;
+    }
+</style>
+
+<script>
+    function onChange(showPlayers) {
+      let href = new URL(location.href);
+      href.searchParams.set('players', showPlayers);
+      location.href=href;
+    }
+</script>
+
+<div class="rating-flex-title">
+  <h3>Рейтинг</h3>
+</div>
+<br>
+
+
+
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>#</th>
+            <th><a href="index.htm?sort=name">Игрок</a></th>
+            <th><a href="index-1.htm?sort=rating">Рейтинговые очки</a></th>
+            <th><a href="index-2.htm?sort=avg_place">Среднее место</a></th>
+            <th><a href="index-3.htm?sort=avg_score">Средние очки</a><span class="icon-arrow-down"></span></th>
+            <th>Сыграно игр</th>
+        </tr>
+        <tr class="">
+            <td>1</td>
+            <td><a href="../user/572.html">Гришаев Никита</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">215900</span></td>
+            <td>1.875</td>
+            <td>26988</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>2</td>
+            <td><a href="../user/216.html">Ткаченко Никита</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">153000</span></td>
+            <td>1.5</td>
+            <td>19125</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>3</td>
+            <td><a href="../user/325.html">Гайнулина Людмила</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">122000</span></td>
+            <td>1.875</td>
+            <td>15250</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>4</td>
+            <td><a href="../user/520.html">Яковлева Мария</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">118700</span></td>
+            <td>2</td>
+            <td>14838</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>5</td>
+            <td><a href="../user/214.html">Богданов Владимир</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">116400</span></td>
+            <td>1.875</td>
+            <td>14550</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>6</td>
+            <td><a href="../user/355.html">Сычев Иван</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">108000</span></td>
+            <td>1.75</td>
+            <td>13500</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>7</td>
+            <td><a href="../user/260.html">Быкова Юлия</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">101800</span></td>
+            <td>1.75</td>
+            <td>12725</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>8</td>
+            <td><a href="../user/231.html">Гришин Виктор</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">92700</span></td>
+            <td>2.125</td>
+            <td>11588</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>9</td>
+            <td><a href="../user/356.html">Толочный Николай</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">92300</span></td>
+            <td>2.125</td>
+            <td>11538</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>10</td>
+            <td><a href="../user/313.html">Вышиванная Оксана</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">87900</span></td>
+            <td>2.125</td>
+            <td>10988</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>11</td>
+            <td><a href="../user/363.html">Безуглова Анастасия</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">87800</span></td>
+            <td>1.875</td>
+            <td>10975</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>12</td>
+            <td><a href="../user/310.html">Богачев Павел</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">81300</span></td>
+            <td>2.25</td>
+            <td>10163</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>13</td>
+            <td><a href="../user/56.html">Лисихин Алексей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">77500</span></td>
+            <td>2.125</td>
+            <td>9688</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>14</td>
+            <td><a href="../user/232.html">Ильина Дарья</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">72700</span></td>
+            <td>2</td>
+            <td>9088</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>15</td>
+            <td><a href="../user/229.html">Коробейников Владимир</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">66900</span></td>
+            <td>2.125</td>
+            <td>8363</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>16</td>
+            <td><a href="../user/323.html">Сироткин Дмитрий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">60400</span></td>
+            <td>2.25</td>
+            <td>7550</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>17</td>
+            <td><a href="../user/347.html">Ли Дмитрий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">57200</span></td>
+            <td>2.125</td>
+            <td>7150</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>18</td>
+            <td><a href="../user/307.html">Котлов Никита</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">56000</span></td>
+            <td>2.375</td>
+            <td>7000</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>19</td>
+            <td><a href="../user/226.html">Николаев Леон</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">55000</span></td>
+            <td>2.25</td>
+            <td>6875</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>20</td>
+            <td><a href="../user/39.html">Клименко Олег</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">47300</span></td>
+            <td>2.375</td>
+            <td>5913</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>21</td>
+            <td><a href="../user/269.html">Куба Анастасия</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">46100</span></td>
+            <td>2.375</td>
+            <td>5763</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>22</td>
+            <td><a href="../user/266.html">Проскурякова Ольга</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">40300</span></td>
+            <td>2.25</td>
+            <td>5038</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>23</td>
+            <td><a href="../user/222.html">Коротаева Анна</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">39300</span></td>
+            <td>2.25</td>
+            <td>4913</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>24</td>
+            <td><a href="../user/91.html">Телегин Юрий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">39000</span></td>
+            <td>2</td>
+            <td>4875</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>25</td>
+            <td><a href="../user/315.html">Луговкин Михаил</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">37100</span></td>
+            <td>2.25</td>
+            <td>4638</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>26</td>
+            <td><a href="../user/518.html">Володин Дмитрий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">36400</span></td>
+            <td>2.375</td>
+            <td>4550</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>27</td>
+            <td><a href="../user/290.html">Петрущенко Сергей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">36300</span></td>
+            <td>2.375</td>
+            <td>4538</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>28</td>
+            <td><a href="../user/343.html">Захаренков Максим</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">35100</span></td>
+            <td>2.375</td>
+            <td>4388</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>29</td>
+            <td><a href="../user/359.html">Шпильман Анна</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">34300</span></td>
+            <td>2.375</td>
+            <td>4288</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>30</td>
+            <td><a href="../user/240.html">Нетребина Евгения</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">27300</span></td>
+            <td>2.375</td>
+            <td>3413</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>31</td>
+            <td><a href="../user/372.html">Имамутдинова Олеся</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">20500</span></td>
+            <td>2.375</td>
+            <td>2563</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>32</td>
+            <td><a href="../user/247.html">Куроптева Людмила</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">19900</span></td>
+            <td>2.125</td>
+            <td>2488</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>33</td>
+            <td><a href="../user/88.html">Скарлат Евгений</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">14000</span></td>
+            <td>2.375</td>
+            <td>1750</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>34</td>
+            <td><a href="../user/360.html">Сорокин Павел</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">12000</span></td>
+            <td>2.5</td>
+            <td>1500</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>35</td>
+            <td><a href="../user/245.html">Павлов Георгий</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">7600</span></td>
+            <td>2.25</td>
+            <td>950</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>36</td>
+            <td><a href="../user/300.html">Карташев Павел</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">6100</span></td>
+            <td>2.375</td>
+            <td>763</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>37</td>
+            <td><a href="../user/263.html">Елшанкин Андрей</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">5100</span></td>
+            <td>2.625</td>
+            <td>638</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>38</td>
+            <td><a href="../user/289.html">Ширшов Александр</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">4600</span></td>
+            <td>2.125</td>
+            <td>575</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>39</td>
+            <td><a href="../user/227.html">Монаков Илья</a></td>
+            <td><span class="badge
+                badge-success
+                
+            ">4400</span></td>
+            <td>2.625</td>
+            <td>550</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>40</td>
+            <td><a href="../user/517.html">Шифрин Андрей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-2400</span></td>
+            <td>2.5</td>
+            <td>-300</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>41</td>
+            <td><a href="../user/582.html">Голикова Наталья</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-8200</span></td>
+            <td>2.625</td>
+            <td>-1025</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>42</td>
+            <td><a href="../user/264.html">Быков Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-9400</span></td>
+            <td>2.5</td>
+            <td>-1175</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>43</td>
+            <td><a href="../user/284.html">Петухов Михаил</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-11100</span></td>
+            <td>2.625</td>
+            <td>-1388</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>44</td>
+            <td><a href="../user/218.html">Борзоногов Виталий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-11700</span></td>
+            <td>2.75</td>
+            <td>-1463</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>45</td>
+            <td><a href="../user/244.html">Васильев Сергей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-13100</span></td>
+            <td>2.625</td>
+            <td>-1638</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>46</td>
+            <td><a href="../user/36.html">Порошин Семен</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-14700</span></td>
+            <td>2.625</td>
+            <td>-1838</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>47</td>
+            <td><a href="../user/230.html">Алешин Сергей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-17400</span></td>
+            <td>2.5</td>
+            <td>-2175</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>48</td>
+            <td><a href="../user/519.html">Мишакова Любовь</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-19500</span></td>
+            <td>2.625</td>
+            <td>-2438</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>49</td>
+            <td><a href="../user/614.html">Бабушкин Александр</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-21100</span></td>
+            <td>2.625</td>
+            <td>-2638</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>50</td>
+            <td><a href="../user/371.html">Дубровин Сергей </a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-21200</span></td>
+            <td>2.5</td>
+            <td>-2650</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>51</td>
+            <td><a href="../user/317.html">Мустакимова Эля</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-25800</span></td>
+            <td>2.5</td>
+            <td>-3225</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>52</td>
+            <td><a href="../user/357.html">Утин Илья</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-26200</span></td>
+            <td>2.5</td>
+            <td>-3275</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>53</td>
+            <td><a href="../user/90.html">Бохан Мария</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-27000</span></td>
+            <td>2.375</td>
+            <td>-3375</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>54</td>
+            <td><a href="../user/248.html">Ланцов Андрей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-27700</span></td>
+            <td>2.625</td>
+            <td>-3463</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>55</td>
+            <td><a href="../user/617.html">Кравченко Михаил</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-27900</span></td>
+            <td>2.625</td>
+            <td>-3488</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>56</td>
+            <td><a href="../user/425.html">Гладышев Сергей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-30500</span></td>
+            <td>2.75</td>
+            <td>-3813</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>57</td>
+            <td><a href="../user/217.html">Новиков Антон</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-36300</span></td>
+            <td>2.875</td>
+            <td>-4538</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>58</td>
+            <td><a href="../user/259.html">Свиридова Валентина</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-36600</span></td>
+            <td>2.5</td>
+            <td>-4575</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>59</td>
+            <td><a href="../user/280.html">Коновалов Михаил</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-39800</span></td>
+            <td>2.625</td>
+            <td>-4975</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>60</td>
+            <td><a href="../user/413.html">Богачков Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-40400</span></td>
+            <td>2.625</td>
+            <td>-5050</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>61</td>
+            <td><a href="../user/235.html">Алексеева Ольга</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-41200</span></td>
+            <td>2.5</td>
+            <td>-5150</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>62</td>
+            <td><a href="../user/553.html">Никулин Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-42100</span></td>
+            <td>2.625</td>
+            <td>-5263</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>63</td>
+            <td><a href="../user/256.html">Невзоров Александр</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-42800</span></td>
+            <td>2.625</td>
+            <td>-5350</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>64</td>
+            <td><a href="../user/337.html">Данилевская Алла</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-49300</span></td>
+            <td>3</td>
+            <td>-6163</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>65</td>
+            <td><a href="../user/225.html">Плясунов Владислав</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-52400</span></td>
+            <td>2.875</td>
+            <td>-6550</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>66</td>
+            <td><a href="../user/349.html">Нагорная Екатерина</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-53700</span></td>
+            <td>2.5</td>
+            <td>-6713</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>67</td>
+            <td><a href="../user/220.html">Леонтьев Алексей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-54200</span></td>
+            <td>2.75</td>
+            <td>-6775</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>68</td>
+            <td><a href="../user/252.html">Хромов Кирилл</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-59200</span></td>
+            <td>2.875</td>
+            <td>-7400</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>69</td>
+            <td><a href="../user/287.html">Зайчиков Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-65300</span></td>
+            <td>2.75</td>
+            <td>-8163</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>70</td>
+            <td><a href="../user/55.html">Лисихина Людмила</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-71000</span></td>
+            <td>3</td>
+            <td>-8875</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>71</td>
+            <td><a href="../user/295.html">Бурмистров Евгений</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-74900</span></td>
+            <td>2.75</td>
+            <td>-9363</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>72</td>
+            <td><a href="../user/618.html">Симонова Светлана</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-75600</span></td>
+            <td>2.875</td>
+            <td>-9450</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>73</td>
+            <td><a href="../user/228.html">Черных Анастасия</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-87900</span></td>
+            <td>3</td>
+            <td>-10988</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>74</td>
+            <td><a href="../user/550.html">Каликин Андрей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-92800</span></td>
+            <td>2.75</td>
+            <td>-11600</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>75</td>
+            <td><a href="../user/374.html">Чекан Викмар </a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-96900</span></td>
+            <td>2.875</td>
+            <td>-12113</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>76</td>
+            <td><a href="../user/340.html">Дуленко Галина</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-98700</span></td>
+            <td>3</td>
+            <td>-12338</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>77</td>
+            <td><a href="../user/619.html">Яковлев Андрей</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-108800</span></td>
+            <td>3.125</td>
+            <td>-13600</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>78</td>
+            <td><a href="../user/282.html">Поташева Евгения</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-117400</span></td>
+            <td>3.25</td>
+            <td>-14675</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>79</td>
+            <td><a href="../user/616.html">Маняхин Петр</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-117900</span></td>
+            <td>3.25</td>
+            <td>-14738</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>80</td>
+            <td><a href="../user/316.html">Мишаков Дмитрий</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-129900</span></td>
+            <td>3.125</td>
+            <td>-16238</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>81</td>
+            <td><a href="../user/615.html">Константинова Екатерина</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-139200</span></td>
+            <td>3.25</td>
+            <td>-17400</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>82</td>
+            <td><a href="../user/423.html">Бадамшин Шамиль</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-155700</span></td>
+            <td>3.125</td>
+            <td>-19463</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>83</td>
+            <td><a href="../user/327.html">Игрок замены 2</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-240000</span></td>
+            <td>3</td>
+            <td>-30000</td>
+            <td>8</td>
+        </tr>
+        <tr class="">
+            <td>84</td>
+            <td><a href="../user/326.html">Игрок замены 1</a></td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-240000</span></td>
+            <td>3.5</td>
+            <td>-30000</td>
+            <td>8</td>
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

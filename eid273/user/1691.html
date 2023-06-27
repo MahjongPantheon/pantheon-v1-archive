@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Статистика и графики: Попова Виктория - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../../eid273.html" class="nav-link">Midori, Минск, 2020.2</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="../stat.html" class="nav-link">Рейтинг</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    
+<div class="graphs">
+
+        <h3>Попова Виктория: личная статистика</h3>
+        <small>id: 1691</small>
+        <hr>
+
+
+            <div id='chart_rating'></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var i18n = {
+            '_LABEL_RATING': 'Рейтинг',
+            '_HANDS_VALUE': 'Стоимость рук',
+            '_HAN': 'Хан',
+            '_YAKU_OVERALLTIME': 'Собранные яку (за все время)',
+            '_GAME_DETAILS': 'Подробнее об игре'
+        };
+
+        plotRating(
+            [[0,0],[1,-12900],[2,-52700],[3,-86700],[4,-74800],[5,-86700],[6,-66100],[7,-26200],[8,4500],[9,40500],[10,31300],[11,23500]],
+            {"22974":[{"session_hash":"ea29017a7a3d00daff0252caedbaa5f80d84f1f7","event_id":273,"player_id":1691,"score":22100,"rating_delta":-12900,"place":3},{"session_hash":"ea29017a7a3d00daff0252caedbaa5f80d84f1f7","event_id":273,"player_id":903,"score":65700,"rating_delta":50700,"place":1},{"session_hash":"ea29017a7a3d00daff0252caedbaa5f80d84f1f7","event_id":273,"player_id":1516,"score":3500,"rating_delta":-41500,"place":4},{"session_hash":"ea29017a7a3d00daff0252caedbaa5f80d84f1f7","event_id":273,"player_id":1481,"score":28700,"rating_delta":3700,"place":2}],"23894":[{"session_hash":"d9d45da061ed42370f147b5c9a39d872861db8b8","event_id":273,"player_id":1694,"score":44500,"rating_delta":29500,"place":1},{"session_hash":"d9d45da061ed42370f147b5c9a39d872861db8b8","event_id":273,"player_id":1498,"score":43700,"rating_delta":18700,"place":2},{"session_hash":"d9d45da061ed42370f147b5c9a39d872861db8b8","event_id":273,"player_id":1479,"score":26600,"rating_delta":-8400,"place":3},{"session_hash":"d9d45da061ed42370f147b5c9a39d872861db8b8","event_id":273,"player_id":1691,"score":5200,"rating_delta":-39800,"place":4}],"23895":[{"session_hash":"8e1090a16d11837e5637bdb5d9bf9a7a2af0bf40","event_id":273,"player_id":1691,"score":11000,"rating_delta":-34000,"place":4},{"session_hash":"8e1090a16d11837e5637bdb5d9bf9a7a2af0bf40","event_id":273,"player_id":1479,"score":52500,"rating_delta":37500,"place":1},{"session_hash":"8e1090a16d11837e5637bdb5d9bf9a7a2af0bf40","event_id":273,"player_id":1498,"score":14000,"rating_delta":-21000,"place":3},{"session_hash":"8e1090a16d11837e5637bdb5d9bf9a7a2af0bf40","event_id":273,"player_id":1694,"score":42500,"rating_delta":17500,"place":2}],"23896":[{"session_hash":"bac73857b01bf8797ea3f0c4fa42dd87a11175ae","event_id":273,"player_id":1498,"score":17400,"rating_delta":-17600,"place":3},{"session_hash":"bac73857b01bf8797ea3f0c4fa42dd87a11175ae","event_id":273,"player_id":1691,"score":36900,"rating_delta":11900,"place":2},{"session_hash":"bac73857b01bf8797ea3f0c4fa42dd87a11175ae","event_id":273,"player_id":1694,"score":5200,"rating_delta":-39800,"place":4},{"session_hash":"bac73857b01bf8797ea3f0c4fa42dd87a11175ae","event_id":273,"player_id":1479,"score":60500,"rating_delta":45500,"place":1}],"24599":[{"session_hash":"d9459a87bd8baf2326e3a1d20355cee5f39be72a","event_id":273,"player_id":1694,"score":31600,"rating_delta":6600,"place":2},{"session_hash":"d9459a87bd8baf2326e3a1d20355cee5f39be72a","event_id":273,"player_id":1479,"score":54900,"rating_delta":39900,"place":1},{"session_hash":"d9459a87bd8baf2326e3a1d20355cee5f39be72a","event_id":273,"player_id":1691,"score":23100,"rating_delta":-11900,"place":3},{"session_hash":"d9459a87bd8baf2326e3a1d20355cee5f39be72a","event_id":273,"player_id":664,"score":10400,"rating_delta":-34600,"place":4}],"24601":[{"session_hash":"6cd98c91b8be959213da0aa625dc8792bb641b15","event_id":273,"player_id":1479,"score":29300,"rating_delta":4300,"place":2},{"session_hash":"6cd98c91b8be959213da0aa625dc8792bb641b15","event_id":273,"player_id":664,"score":29100,"rating_delta":-5900,"place":3},{"session_hash":"6cd98c91b8be959213da0aa625dc8792bb641b15","event_id":273,"player_id":1691,"score":35600,"rating_delta":20600,"place":1},{"session_hash":"6cd98c91b8be959213da0aa625dc8792bb641b15","event_id":273,"player_id":1694,"score":26000,"rating_delta":-19000,"place":4}],"24609":[{"session_hash":"798f9177eb296a6d3e711f3296814034bf4e7211","event_id":273,"player_id":1498,"score":31600,"rating_delta":6600,"place":2},{"session_hash":"798f9177eb296a6d3e711f3296814034bf4e7211","event_id":273,"player_id":1691,"score":54900,"rating_delta":39900,"place":1},{"session_hash":"798f9177eb296a6d3e711f3296814034bf4e7211","event_id":273,"player_id":664,"score":7500,"rating_delta":-37500,"place":4},{"session_hash":"798f9177eb296a6d3e711f3296814034bf4e7211","event_id":273,"player_id":1496,"score":26000,"rating_delta":-9000,"place":3}],"24710":[{"session_hash":"0b250fcc2ac3e72e67acdae8ad5ea8a06dca3bd2","event_id":273,"player_id":1496,"score":19900,"rating_delta":-25100,"place":4},{"session_hash":"0b250fcc2ac3e72e67acdae8ad5ea8a06dca3bd2","event_id":273,"player_id":1691,"score":45700,"rating_delta":30700,"place":1},{"session_hash":"0b250fcc2ac3e72e67acdae8ad5ea8a06dca3bd2","event_id":273,"player_id":664,"score":22200,"rating_delta":-12800,"place":3},{"session_hash":"0b250fcc2ac3e72e67acdae8ad5ea8a06dca3bd2","event_id":273,"player_id":1498,"score":32200,"rating_delta":7200,"place":2}],"24713":[{"session_hash":"9d885fbf7a3c9299557a260b8f3905a0f17c42e0","event_id":273,"player_id":1496,"score":14100,"rating_delta":-30900,"place":4},{"session_hash":"9d885fbf7a3c9299557a260b8f3905a0f17c42e0","event_id":273,"player_id":1691,"score":51000,"rating_delta":36000,"place":1},{"session_hash":"9d885fbf7a3c9299557a260b8f3905a0f17c42e0","event_id":273,"player_id":1498,"score":26300,"rating_delta":-8700,"place":3},{"session_hash":"9d885fbf7a3c9299557a260b8f3905a0f17c42e0","event_id":273,"player_id":664,"score":28600,"rating_delta":3600,"place":2}],"25001":[{"session_hash":"670572a776aa304c67c3a2d4f007c215dc417dc0","event_id":273,"player_id":1498,"score":46400,"rating_delta":31400,"place":1},{"session_hash":"670572a776aa304c67c3a2d4f007c215dc417dc0","event_id":273,"player_id":1691,"score":25800,"rating_delta":-9200,"place":3},{"session_hash":"670572a776aa304c67c3a2d4f007c215dc417dc0","event_id":273,"player_id":863,"score":37900,"rating_delta":12900,"place":2},{"session_hash":"670572a776aa304c67c3a2d4f007c215dc417dc0","event_id":273,"player_id":715,"score":9900,"rating_delta":-35100,"place":4}],"25006":[{"session_hash":"828997f6f48f71fc8da0d40e043c3a49be1d2354","event_id":273,"player_id":1691,"score":27200,"rating_delta":-7800,"place":3},{"session_hash":"828997f6f48f71fc8da0d40e043c3a49be1d2354","event_id":273,"player_id":1498,"score":31100,"rating_delta":6100,"place":2},{"session_hash":"828997f6f48f71fc8da0d40e043c3a49be1d2354","event_id":273,"player_id":715,"score":16700,"rating_delta":-28300,"place":4},{"session_hash":"828997f6f48f71fc8da0d40e043c3a49be1d2354","event_id":273,"player_id":863,"score":45000,"rating_delta":30000,"place":1}]},
+            1691,
+            {"664":{"id":664,"display_name":"\u0428\u0430\u0440\u0430\u0445 \u0422\u0438\u043c\u043e\u0444\u0435\u0439","tenhou_id":"shatinik"},"715":{"id":715,"display_name":"\u041a\u0430\u0431\u0430\u043a \u042e\u0440\u0438\u0439","tenhou_id":""},"863":{"id":863,"display_name":"\u0418\u043b\u044c\u043a\u0435\u0432\u0438\u0447 \u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f","tenhou_id":""},"903":{"id":903,"display_name":"\u0411\u0443\u0431\u043d\u043e\u0432\u0438\u0447 \u041e\u043b\u0435\u0433","tenhou_id":"Kubric"},"1479":{"id":1479,"display_name":"\u041a\u0443\u043b\u044c\u0433\u0430\u0435\u0432\u0430 \u0412\u0430\u0440\u0432\u0430\u0440\u0430","tenhou_id":"Vareshka"},"1481":{"id":1481,"display_name":"\u0414\u0440\u043e\u0437\u0434\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439","tenhou_id":""},"1496":{"id":1496,"display_name":"\u0410\u043d\u0442\u0438\u043f\u043e\u0432\u0430 \u0410\u043d\u0442\u043e\u043d\u0438\u043d\u0430","tenhou_id":""},"1498":{"id":1498,"display_name":"\u0420\u0443\u0442\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0410\u043d\u0442\u043e\u043d","tenhou_id":"Ver_Verg"},"1516":{"id":1516,"display_name":"\u041c\u0435\u0434\u0432\u0435\u0434\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440","tenhou_id":""},"1691":{"id":1691,"display_name":"\u041f\u043e\u043f\u043e\u0432\u0430 \u0412\u0438\u043a\u0442\u043e\u0440\u0438\u044f","tenhou_id":""},"1694":{"id":1694,"display_name":"Jenkins","tenhou_id":""}},
+            0,
+            i18n
+        );
+        plotHands(
+            [["1",1],["2",6],["3",10],["4",3],["5",5],["6",2],["7",0],["8",0],["9",0],["10",0],["11",0],["12",0]],
+            [[1,"\u0422\u043e\u0439\u0442\u043e\u0439"],[1,"\u0427\u0438\u0438\u0442\u043e\u0439\u0446\u0443"],[2,"\u042f\u043a\u0443\u0445\u0430\u0439 1"],[2,"\u041c\u0435\u043d\u0434\u0437\u0435\u043d \u0446\u0443\u043c\u043e"],[2,"\u0427\u0430\u043d\u0442\u0430"],[2,"\u042f\u043a\u0443\u0445\u0430\u0439 2"],[3,"\u0418\u0438\u043f\u0435\u0439\u043a\u043e"],[3,"\u0418\u043f\u043f\u0430\u0446\u0443"],[3,"\u0427\u0438\u043d\u0438\u0446\u0443"],[6,"\u041f\u0438\u043d-\u0444\u0443"],[7,"\u0422\u0430\u043d\u044f\u043e"],[17,"\u0420\u0438\u0438\u0447\u0438"],[6,"\u042f\u043a\u0443\u0445\u0430\u0439: \u0432\u0441\u0435\u0433\u043e"]],
+            i18n
+        );
+    });
+</script>
+            <hr>
+
+            <div class="container">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped table-condensed">
+                        <tr>
+                            <td colspan="2" style="padding-left: 20px"><b>Общая статистика</b></td>
+                        </tr>
+                        <tr>
+                            <td>Сыграно игр</td>
+                            <td><b>11</b></td>
+                        </tr>
+                        <tr>
+                            <td>Сыграно раздач</td>
+                            <td><b>136</b></td>
+                        </tr>
+                        <tr>
+                            <td>Выиграно раздач</td>
+                            <td><b>27</b> &nbsp; (19.85%)</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" style="padding-left: 20px"><b>По итогам раздач:</b></td>
+                        </tr>
+                        <tr>
+                            <td>Выигрышей по рон</td>
+                            <td><b>23</b> &nbsp; (16.91%)</td>
+                        </tr>
+                        <tr>
+                            <td>Выигрышей по цумо</td>
+                            <td><b>4</b> &nbsp; (2.94%)</td>
+                        </tr>
+                        <tr>
+                            <td>Набросов в рон</td>
+                            <td><b>22</b> &nbsp; (16.18%)</td>
+                        </tr>
+                        <tr>
+                            <td>- в том числе из-за риичи</td>
+                            <td><b>5</b> &nbsp; (3.68%)</td>
+                        </tr>
+                        <tr>
+                            <td>Выплат по цумо</td>
+                            <td><b>29</b> &nbsp; (21.32%)</td>
+                        </tr>
+                        <tr>
+                            <td>Открытых рук</td>
+                            <td><b>10</b> &nbsp; (37.04%)</td>
+                        </tr>
+                        <tr>
+                            <td>Штрафов чомбо</td>
+                            <td><b>0</b> &nbsp; (0%)</td>
+                        </tr>
+                        <tr>
+                            <td>Ставок риичи</td>
+                            <td><b>28</b> &nbsp; (20.59%)</td>
+                        </tr>
+                        <tr>
+                            <td>- из них выигранных</td>
+                            <td><b>17</b> &nbsp; (60.71%)</td>
+                        </tr>
+                        <tr>
+                            <td>- из них потерянных</td>
+                            <td><b>11</b> &nbsp; (39.29%)</td>
+                        </tr>
+                        <tr>
+                            <td>Количество дор (ср.)</td>
+                            <td><b>27</b> &nbsp; (1.00)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-left: 20px"><b>Статистика по местам:</b></td>
+                        </tr>
+                        <tr>
+                            <td>1 место</td>
+                            <td>36.36 %</td>
+                        </tr>
+                        <tr>
+                            <td>2 место</td>
+                            <td>9.09 %</td>
+                        </tr>
+                        <tr>
+                            <td>3 место</td>
+                            <td>36.36 %</td>
+                        </tr>
+                        <tr>
+                            <td>4 место</td>
+                            <td>18.18 %</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-left: 20px"><b>Очки по итогу игры:</b></td>
+                        </tr>
+                        <tr>
+                            <td>Минимальные</td>
+                            <td>5,200</td>
+                        </tr>
+                        <tr>
+                            <td>Максимальные</td>
+                            <td>54,900</td>
+                        </tr>
+                        <tr>
+                            <td>В среднем</td>
+                            <td>30,772</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-8">
+                    <div id='chart_hands'></div>
+                    <hr>
+                    <div id='chart_yaku'></div>
+                </div>
+            </div>
+            </div>
+
+</div>
+
+</div>
+
+<script type="text/javascript" src="../../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

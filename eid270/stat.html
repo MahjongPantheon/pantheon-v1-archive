@@ -1,0 +1,1728 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Рейтинг - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../eid270.html" class="nav-link">Riichi Online Open Team Cup</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="stat.html" class="nav-link">Рейтинг</a></li>
+              <li class="nav-item"><a href="stat/team.html" class="nav-link">Командный рейтинг</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style>
+    .rating-flex-title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+    .players-options{
+      margin-left: 40px;
+    }
+    .row-min-was-played:nth-of-type(even) {
+        background-color: rgba(0, 255, 129, 0.12);
+    }
+    .row-min-was-played:nth-of-type(odd) {
+        background-color: rgba(96, 201, 149, 0.27) !important;
+    }
+</style>
+
+<script>
+    function onChange(showPlayers) {
+      let href = new URL(location.href);
+      href.searchParams.set('players', showPlayers);
+      location.href=href;
+    }
+</script>
+
+<div class="rating-flex-title">
+  <h3>Рейтинг</h3>
+</div>
+<br>
+
+
+
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>#</th>
+            <th><a href="stat/index.htm?sort=name">Игрок</a></th>
+                <th>Команда</th>
+            <th><a href="stat/index-1.htm?sort=rating">Рейтинговые очки</a><span class="icon-arrow-down"></span></th>
+            <th><a href="stat/index-2.htm?sort=avg_place">Среднее место</a></th>
+            <th><a href="stat/index-3.htm?sort=avg_score">Средние очки</a></th>
+            <th>Сыграно игр</th>
+        </tr>
+        <tr class="">
+            <td>1</td>
+            <td><a href="user/432.html">Поляков Кирилл</a> (Пёс002)</td>
+              <td>КанЕдиницСоу</td>
+            <td><span class="badge
+                badge-success
+                
+            ">187900</span></td>
+            <td>1.7143</td>
+            <td>26843</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>2</td>
+            <td><a href="user/436.html">Юдинцев Максим</a> (RODIPIT)</td>
+              <td>КанЕдиницСоу</td>
+            <td><span class="badge
+                badge-success
+                
+            ">176600</span></td>
+            <td>1.5714</td>
+            <td>25229</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>3</td>
+            <td><a href="user/757.html">Золдак Артем</a> (Bismarck)</td>
+              <td>NoName</td>
+            <td><span class="badge
+                badge-success
+                
+            ">155700</span></td>
+            <td>1.7143</td>
+            <td>22243</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>4</td>
+            <td><a href="user/363.html">Безуглова Анастасия</a> (anana_z)</td>
+              <td>Stonk$</td>
+            <td><span class="badge
+                badge-success
+                
+            ">152100</span></td>
+            <td>1.8571</td>
+            <td>21729</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>5</td>
+            <td><a href="user/225.html">Плясунов Владислав</a> (=))</td>
+              <td>Капитолий</td>
+            <td><span class="badge
+                badge-success
+                
+            ">121500</span></td>
+            <td>1.7143</td>
+            <td>17357</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>6</td>
+            <td><a href="user/1023.html">Пакшаев Константин</a> (Kan-Nya)</td>
+              <td>Да как так-то</td>
+            <td><span class="badge
+                badge-success
+                
+            ">121300</span></td>
+            <td>1.8571</td>
+            <td>17329</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>7</td>
+            <td><a href="user/65.html">Суслова Анастасия</a> (Suslik)</td>
+              <td>Победители по жизни</td>
+            <td><span class="badge
+                badge-success
+                
+            ">118900</span></td>
+            <td>2</td>
+            <td>16986</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>8</td>
+            <td><a href="user/9.html">Ким Валерия</a> (Replay)</td>
+              <td>Победители по жизни</td>
+            <td><span class="badge
+                badge-success
+                
+            ">112700</span></td>
+            <td>2</td>
+            <td>16100</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>9</td>
+            <td><a href="user/218.html">Борзоногов Виталий</a> (ヴィタリー)</td>
+              <td>Reversed chun</td>
+            <td><span class="badge
+                badge-success
+                
+            ">111500</span></td>
+            <td>2</td>
+            <td>15929</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>10</td>
+            <td><a href="user/55.html">Лисихина Людмила</a> (Pusheen)</td>
+              <td>Котик хочет тамяо 3 доррры</td>
+            <td><span class="badge
+                badge-success
+                
+            ">110400</span></td>
+            <td>2</td>
+            <td>15771</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>11</td>
+            <td><a href="user/551.html">Мышкин Никита</a> (Bagatur)</td>
+              <td>NoName</td>
+            <td><span class="badge
+                badge-success
+                
+            ">104400</span></td>
+            <td>2</td>
+            <td>14914</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>12</td>
+            <td><a href="user/570.html">Курмаев Ренат</a> (Rebus)</td>
+              <td>RAMM_TAIM</td>
+            <td><span class="badge
+                badge-success
+                
+            ">100700</span></td>
+            <td>1.8571</td>
+            <td>14386</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>13</td>
+            <td><a href="user/415.html">Кондратенко Анна</a> (Antuanet)</td>
+              <td>Ad meliora!</td>
+            <td><span class="badge
+                badge-success
+                
+            ">100200</span></td>
+            <td>1.8571</td>
+            <td>14314</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>14</td>
+            <td><a href="user/1319.html">Pozniak Claire</a> (KANYE西)</td>
+              <td>брайтон Риич</td>
+            <td><span class="badge
+                badge-success
+                
+            ">96200</span></td>
+            <td>2</td>
+            <td>13743</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>15</td>
+            <td><a href="user/14.html">Соколов Михаил</a> (OS/2)</td>
+              <td>ПМС</td>
+            <td><span class="badge
+                badge-success
+                
+            ">94900</span></td>
+            <td>1.8571</td>
+            <td>13557</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>16</td>
+            <td><a href="user/315.html">Луговкин Михаил</a> (macabre)</td>
+              <td>Ad meliora!</td>
+            <td><span class="badge
+                badge-success
+                
+            ">92300</span></td>
+            <td>2.1429</td>
+            <td>13186</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>17</td>
+            <td><a href="user/20.html">Карпов Александр</a> (th_)</td>
+              <td>三麻人</td>
+            <td><span class="badge
+                badge-success
+                
+            ">90100</span></td>
+            <td>2</td>
+            <td>12871</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>18</td>
+            <td><a href="user/847.html">Гришина Ольга</a> (Gvendola)</td>
+              <td>Якухайные ведьмы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">89100</span></td>
+            <td>2</td>
+            <td>12729</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>19</td>
+            <td><a href="user/769.html">Чуров Петр</a> (PEC)</td>
+              <td>Четкий Байман</td>
+            <td><span class="badge
+                badge-success
+                
+            ">88900</span></td>
+            <td>2</td>
+            <td>12700</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>20</td>
+            <td><a href="user/703.html">Ившин Сергей</a> (Ipo)</td>
+              <td>Вятские Гуси</td>
+            <td><span class="badge
+                badge-success
+                
+            ">82600</span></td>
+            <td>2.1429</td>
+            <td>11800</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>21</td>
+            <td><a href="user/220.html">Леонтьев Алексей</a> (Legenda)</td>
+              <td>Капитолий</td>
+            <td><span class="badge
+                badge-success
+                
+            ">78800</span></td>
+            <td>1.8571</td>
+            <td>11257</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>22</td>
+            <td><a href="user/247.html">Куроптева Людмила</a> (Lyudmzzz)</td>
+              <td>Тайл силы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">75100</span></td>
+            <td>2</td>
+            <td>10729</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>23</td>
+            <td><a href="user/1769.html">Malafaia Nathan</a> (Nihil)</td>
+              <td>BMFC</td>
+            <td><span class="badge
+                badge-success
+                
+            ">74000</span></td>
+            <td>2</td>
+            <td>10571</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>24</td>
+            <td><a href="user/272.html">Титова Анна</a> (Freyyya)</td>
+              <td>Team</td>
+            <td><span class="badge
+                badge-success
+                
+            ">72700</span></td>
+            <td>2.1429</td>
+            <td>10386</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>25</td>
+            <td><a href="user/817.html">Подлипаев Сергей</a> (q271828)</td>
+              <td>NoName</td>
+            <td><span class="badge
+                badge-success
+                
+            ">72400</span></td>
+            <td>2.1429</td>
+            <td>10343</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>26</td>
+            <td><a href="user/34.html">Кузькоков Сергей</a> (NоNamе)</td>
+              <td>NoName</td>
+            <td><span class="badge
+                badge-success
+                
+            ">70600</span></td>
+            <td>2.2857</td>
+            <td>10086</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>27</td>
+            <td><a href="user/230.html">Алешин Сергей</a> (Ezaki)</td>
+              <td>Это не было ошибкой</td>
+            <td><span class="badge
+                badge-success
+                
+            ">67000</span></td>
+            <td>2</td>
+            <td>9571</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>28</td>
+            <td><a href="user/310.html">Богачев Павел</a> (wiarlawd)</td>
+              <td>Капитолий</td>
+            <td><span class="badge
+                badge-success
+                
+            ">66700</span></td>
+            <td>2</td>
+            <td>9529</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>29</td>
+            <td><a href="user/434.html">Поносов Никита</a> (TwoNord2)</td>
+              <td>Избранные наркоманы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">63500</span></td>
+            <td>2.1429</td>
+            <td>9071</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>30</td>
+            <td><a href="user/1671.html">Tchoi Ijong</a> (Propane)</td>
+              <td>брайтон Риич</td>
+            <td><span class="badge
+                badge-success
+                
+            ">58900</span></td>
+            <td>2</td>
+            <td>8414</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>31</td>
+            <td><a href="user/809.html">Великанова Светлана</a> (BeegLite)</td>
+              <td>Ad meliora!</td>
+            <td><span class="badge
+                badge-success
+                
+            ">56700</span></td>
+            <td>2.2857</td>
+            <td>8100</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>32</td>
+            <td><a href="user/1754.html">Morisse Valérie</a> (Louva)</td>
+              <td>RUN for your life</td>
+            <td><span class="badge
+                badge-success
+                
+            ">56100</span></td>
+            <td>2.2857</td>
+            <td>8014</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>33</td>
+            <td><a href="user/391.html">Рогозин Леонид</a> (LR)</td>
+              <td>Четкий Байман</td>
+            <td><span class="badge
+                badge-success
+                
+            ">55800</span></td>
+            <td>2.1429</td>
+            <td>7971</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>34</td>
+            <td><a href="user/249.html">Шведов Евгений</a> (シュレーディンガ)</td>
+              <td>KanRonavirus</td>
+            <td><span class="badge
+                badge-success
+                
+            ">54700</span></td>
+            <td>2.1429</td>
+            <td>7814</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>35</td>
+            <td><a href="user/1723.html">Иванова Светлана</a> (sekaaa)</td>
+              <td>Горе от UMA</td>
+            <td><span class="badge
+                badge-success
+                
+            ">52000</span></td>
+            <td>2.2857</td>
+            <td>7429</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>36</td>
+            <td><a href="user/1775.html">Курбацкая Мария</a> (lennna)</td>
+              <td>Hulinada Dragons</td>
+            <td><span class="badge
+                badge-success
+                
+            ">48900</span></td>
+            <td>2.1429</td>
+            <td>6986</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>37</td>
+            <td><a href="user/1763.html">Matthew</a> (M.Zafris)</td>
+              <td>AYAYA</td>
+            <td><span class="badge
+                badge-success
+                
+            ">47600</span></td>
+            <td>2.1429</td>
+            <td>6800</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>38</td>
+            <td><a href="user/560.html">Лемякина Дарья</a> (wangxian)</td>
+              <td>三麻人</td>
+            <td><span class="badge
+                badge-success
+                
+            ">47100</span></td>
+            <td>2.2857</td>
+            <td>6729</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>39</td>
+            <td><a href="user/1731.html">Heffernan Taylor</a> (bakadora)</td>
+              <td>брайтон Риич</td>
+            <td><span class="badge
+                badge-success
+                
+            ">47000</span></td>
+            <td>2.2857</td>
+            <td>6714</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>40</td>
+            <td><a href="user/1766.html">Nemo fallensoul</a> (堕落魂)</td>
+              <td>BMFC</td>
+            <td><span class="badge
+                badge-success
+                
+            ">42600</span></td>
+            <td>2.4286</td>
+            <td>6086</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>41</td>
+            <td><a href="user/909.html">Мельникова Анна</a> (vokinlem)</td>
+              <td>Да как так-то</td>
+            <td><span class="badge
+                badge-success
+                
+            ">42100</span></td>
+            <td>2.4286</td>
+            <td>6014</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>42</td>
+            <td><a href="user/1755.html">Ким Станислав</a> (Kaiter)</td>
+              <td>Суанко в тапках</td>
+            <td><span class="badge
+                badge-success
+                
+            ">41200</span></td>
+            <td>2.1429</td>
+            <td>5886</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>43</td>
+            <td><a href="user/309.html">Наданьян Владимир</a> (Nitemoy)</td>
+              <td>Капитолий</td>
+            <td><span class="badge
+                badge-success
+                
+            ">41200</span></td>
+            <td>2.5714</td>
+            <td>5886</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>44</td>
+            <td><a href="user/1123.html">Вахонин Степан</a> (FrozenM)</td>
+              <td>Красная Семёрка Пин</td>
+            <td><span class="badge
+                badge-success
+                
+            ">38400</span></td>
+            <td>2.1429</td>
+            <td>5486</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>45</td>
+            <td><a href="user/237.html">Перфильев Роман</a> (Loner029)</td>
+              <td>Reversed chun</td>
+            <td><span class="badge
+                badge-success
+                
+            ">38100</span></td>
+            <td>2.2857</td>
+            <td>5443</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>46</td>
+            <td><a href="user/260.html">Быкова Юлия</a> (NeZa)</td>
+              <td>Тайл силы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">36500</span></td>
+            <td>2.2857</td>
+            <td>5214</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>47</td>
+            <td><a href="user/262.html">Максимов Андрей</a> (an_)</td>
+              <td>Stonk$</td>
+            <td><span class="badge
+                badge-success
+                
+            ">34100</span></td>
+            <td>2.4286</td>
+            <td>4871</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>48</td>
+            <td><a href="user/567.html">Соколова Мария</a> (=Xena=)</td>
+              <td>RAMM_TAIM</td>
+            <td><span class="badge
+                badge-success
+                
+            ">34000</span></td>
+            <td>2.4286</td>
+            <td>4857</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>49</td>
+            <td><a href="user/778.html">Гришин Алексей</a> (H2SO4)</td>
+              <td>50 оттенков чиницу</td>
+            <td><span class="badge
+                badge-success
+                
+            ">33900</span></td>
+            <td>2.2857</td>
+            <td>4843</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>50</td>
+            <td><a href="user/30.html">Столбова Анастасия</a> (KyoMaooo)</td>
+              <td>ПМС</td>
+            <td><span class="badge
+                badge-success
+                
+            ">32100</span></td>
+            <td>2.1429</td>
+            <td>4586</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>51</td>
+            <td><a href="user/473.html">Ермолаев Алексей</a> (Алёша)</td>
+              <td>Вятские Гуси</td>
+            <td><span class="badge
+                badge-success
+                
+            ">31900</span></td>
+            <td>2.2857</td>
+            <td>4557</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>52</td>
+            <td><a href="user/268.html">Марков Александр</a> (AlexM584)</td>
+              <td>KanRonavirus</td>
+            <td><span class="badge
+                badge-success
+                
+            ">30000</span></td>
+            <td>2.4286</td>
+            <td>4286</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>53</td>
+            <td><a href="user/1768.html">Dias David</a> (Akiraono)</td>
+              <td>BMFC</td>
+            <td><span class="badge
+                badge-success
+                
+            ">28900</span></td>
+            <td>2.4286</td>
+            <td>4129</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>54</td>
+            <td><a href="user/10.html">Матвеева Алена</a> (Sayaka-s)</td>
+              <td>Победители по жизни</td>
+            <td><span class="badge
+                badge-success
+                
+            ">26900</span></td>
+            <td>2.2857</td>
+            <td>3843</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>55</td>
+            <td><a href="user/689.html">Григорук Настя</a> (verity)</td>
+              <td>Сутулые пёсики Suiken'a</td>
+            <td><span class="badge
+                badge-success
+                
+            ">26400</span></td>
+            <td>2.2857</td>
+            <td>3771</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>56</td>
+            <td><a href="user/723.html">Каплан Андрей</a> (fuffle)</td>
+              <td>Избранные наркоманы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">24800</span></td>
+            <td>2.2857</td>
+            <td>3543</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>57</td>
+            <td><a href="user/1762.html">Barret Cécile</a> (Fz6)</td>
+              <td>RUN for your life</td>
+            <td><span class="badge
+                badge-success
+                
+            ">24700</span></td>
+            <td>2.5714</td>
+            <td>3529</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>58</td>
+            <td><a href="user/489.html">Бокань Всеволод</a> (wakz)</td>
+              <td>Котик хочет тамяо 3 доррры</td>
+            <td><span class="badge
+                badge-success
+                
+            ">23200</span></td>
+            <td>2.4286</td>
+            <td>3314</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>59</td>
+            <td><a href="user/360.html">Сорокин Павел</a> (dec2020)</td>
+              <td>50 оттенков чиницу</td>
+            <td><span class="badge
+                badge-success
+                
+            ">22800</span></td>
+            <td>2.4286</td>
+            <td>3257</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>60</td>
+            <td><a href="user/70.html">Ермолаев Андрей</a> (~~/#\^-^)</td>
+              <td>Пин4айки</td>
+            <td><span class="badge
+                badge-success
+                
+            ">22700</span></td>
+            <td>2.1429</td>
+            <td>3243</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>61</td>
+            <td><a href="user/1507.html">Morisse Jean Michel</a> (Xtravage)</td>
+              <td>RUN for your life</td>
+            <td><span class="badge
+                badge-success
+                
+            ">18700</span></td>
+            <td>2.2857</td>
+            <td>2671</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>62</td>
+            <td><a href="user/1771.html">Wang Wei Bin</a> (Harmonix)</td>
+              <td>брайтон Риич</td>
+            <td><span class="badge
+                badge-success
+                
+            ">18300</span></td>
+            <td>2.5714</td>
+            <td>2614</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>63</td>
+            <td><a href="user/630.html">Иванова Лилия</a> (LiliT)</td>
+              <td>Красная Семёрка Пин</td>
+            <td><span class="badge
+                badge-success
+                
+            ">18200</span></td>
+            <td>2.5714</td>
+            <td>2600</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>64</td>
+            <td><a href="user/388.html">Колпаков Денис</a> (RainCat)</td>
+              <td>Да как так-то</td>
+            <td><span class="badge
+                badge-success
+                
+            ">16600</span></td>
+            <td>2.2857</td>
+            <td>2371</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>65</td>
+            <td><a href="user/507.html">Пинигин Игорь</a> (Garikll)</td>
+              <td>Северные каталы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">16200</span></td>
+            <td>2.2857</td>
+            <td>2314</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>66</td>
+            <td><a href="user/662.html">Амелевич Максим</a> (MAXMAX)</td>
+              <td>Сутулые пёсики Suiken'a</td>
+            <td><span class="badge
+                badge-success
+                
+            ">14000</span></td>
+            <td>2.4286</td>
+            <td>2000</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>67</td>
+            <td><a href="user/263.html">Елшанкин Андрей</a> (H2O)</td>
+              <td>Тайл силы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">13800</span></td>
+            <td>2.4286</td>
+            <td>1971</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>68</td>
+            <td><a href="user/390.html">Соляков Павел</a> (Nuborez)</td>
+              <td>Избранные наркоманы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">11200</span></td>
+            <td>2.5714</td>
+            <td>1600</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>69</td>
+            <td><a href="user/1770.html">Belknap Christopher</a> (InuShift)</td>
+              <td>AYAYA</td>
+            <td><span class="badge
+                badge-success
+                
+            ">7400</span></td>
+            <td>2.2857</td>
+            <td>1057</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>70</td>
+            <td><a href="user/1579.html">Алимова Наталья</a> (Tialary)</td>
+              <td>50 оттенков чиницу</td>
+            <td><span class="badge
+                badge-success
+                
+            ">6900</span></td>
+            <td>2.4286</td>
+            <td>986</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>71</td>
+            <td><a href="user/1683.html">Алейнова Ирина</a> (Irinka94)</td>
+              <td>Суанко в тапках</td>
+            <td><span class="badge
+                badge-success
+                
+            ">5600</span></td>
+            <td>2.5714</td>
+            <td>800</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>72</td>
+            <td><a href="user/564.html">Манджиев Арслан</a> (アルスラーン)</td>
+              <td>Отчаянные канорезы</td>
+            <td><span class="badge
+                badge-success
+                
+            ">3200</span></td>
+            <td>2.7143</td>
+            <td>457</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>73</td>
+            <td><a href="user/16.html">Фалько Ирина</a> (flashka)</td>
+              <td>Победители по жизни</td>
+            <td><span class="badge
+                badge-success
+                
+            ">2500</span></td>
+            <td>2.4286</td>
+            <td>357</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>74</td>
+            <td><a href="user/321.html">Петрова Анна</a> (Lolt)</td>
+              <td>RAMM_TAIM</td>
+            <td><span class="badge
+                badge-success
+                
+            ">2400</span></td>
+            <td>2.4286</td>
+            <td>343</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>75</td>
+            <td><a href="user/1764.html">Sato Tomosumi</a> (夕立)</td>
+              <td>AYAYA</td>
+            <td><span class="badge
+                badge-success
+                
+            ">1900</span></td>
+            <td>2.4286</td>
+            <td>271</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>76</td>
+            <td><a href="user/907.html">Есипова Анна</a> (Kokoko)</td>
+              <td>Да как так-то</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-300</span></td>
+            <td>2.7143</td>
+            <td>-43</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>77</td>
+            <td><a href="user/246.html">Иванов Георгий</a> (BABAMBA)</td>
+              <td>Stonk$</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-500</span></td>
+            <td>2.4286</td>
+            <td>-71</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>78</td>
+            <td><a href="user/231.html">Гришин Виктор</a> (Ayanami)</td>
+              <td>Это не было ошибкой</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-2900</span></td>
+            <td>2.5714</td>
+            <td>-414</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>79</td>
+            <td><a href="user/925.html">Кривошеев Сергей</a> (serjjik)</td>
+              <td>Team</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-8200</span></td>
+            <td>2.4286</td>
+            <td>-1171</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>80</td>
+            <td><a href="user/355.html">Сычев Иван</a> (Rak&amp;Mid)</td>
+              <td>Stonk$</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-9400</span></td>
+            <td>2.4286</td>
+            <td>-1343</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>81</td>
+            <td><a href="user/1725.html">Черемисин Павел</a> ()</td>
+              <td>Hulinada Dragons</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-10200</span></td>
+            <td>2.7143</td>
+            <td>-1457</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>82</td>
+            <td><a href="user/1739.html">Yoon Pio</a> (Goodbye)</td>
+              <td>doukou wa doko</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-12600</span></td>
+            <td>2.5714</td>
+            <td>-1800</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>83</td>
+            <td><a href="user/1734.html">Max Suddendorf</a> (ShiLPYo)</td>
+              <td>AYAYA</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-16500</span></td>
+            <td>2.7143</td>
+            <td>-2357</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>84</td>
+            <td><a href="user/1772.html">Самарский Сергей</a> (Kat666)</td>
+              <td>Горе от UMA</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-20300</span></td>
+            <td>2.7143</td>
+            <td>-2900</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>85</td>
+            <td><a href="user/1777.html">BR Nishi</a> (NishiBR)</td>
+              <td>BMFC</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-22100</span></td>
+            <td>2.7143</td>
+            <td>-3157</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>86</td>
+            <td><a href="user/730.html">Чичигина Наталья</a> (Nadora)</td>
+              <td>Hulinada Dragons</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-22500</span></td>
+            <td>2.5714</td>
+            <td>-3214</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>87</td>
+            <td><a href="user/438.html">Бокань Евгения</a> (Ezhi)</td>
+              <td>Котик хочет тамяо 3 доррры</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-22900</span></td>
+            <td>2.5714</td>
+            <td>-3271</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>88</td>
+            <td><a href="user/902.html">Петров Александр</a> (noYaku)</td>
+              <td>Вятские Гуси</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-27700</span></td>
+            <td>2.5714</td>
+            <td>-3957</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>89</td>
+            <td><a href="user/685.html">Бижанова Разия</a> (Shiro)</td>
+              <td>Сутулые пёсики Suiken'a</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-29500</span></td>
+            <td>2.7143</td>
+            <td>-4214</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>90</td>
+            <td><a href="user/1667.html">Кондратенко Екатерина</a> ()</td>
+              <td>50 оттенков чиницу</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-33500</span></td>
+            <td>2.7143</td>
+            <td>-4786</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>91</td>
+            <td><a href="user/1720.html">Halperin Rachel</a> (rachel)</td>
+              <td>doukou wa doko</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-34700</span></td>
+            <td>2.7143</td>
+            <td>-4957</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>92</td>
+            <td><a href="user/770.html">Лавникевич Сергей</a> (Greyson)</td>
+              <td>Четкий Байман</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-35700</span></td>
+            <td>2.5714</td>
+            <td>-5100</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>93</td>
+            <td><a href="user/878.html">Чичигин Андрей</a> (AnryChan)</td>
+              <td>Hulinada Dragons</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-37600</span></td>
+            <td>2.7143</td>
+            <td>-5371</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>94</td>
+            <td><a href="user/319.html">Патрикеев Павел</a> (Patrik)</td>
+              <td>Это не было ошибкой</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-42100</span></td>
+            <td>2.7143</td>
+            <td>-6014</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>95</td>
+            <td><a href="user/1758.html">Cooper Betty</a> (BettyCoo)</td>
+              <td>Ad meliora!</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-42500</span></td>
+            <td>2.4286</td>
+            <td>-6071</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>96</td>
+            <td><a href="user/367.html">Гурьев Никита</a> (Gnikita)</td>
+              <td>Reversed chun</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-42900</span></td>
+            <td>2.7143</td>
+            <td>-6129</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>97</td>
+            <td><a href="user/901.html">Семаков Станислав</a> (Jamola)</td>
+              <td>Вятские Гуси</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-44600</span></td>
+            <td>2.8571</td>
+            <td>-6371</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>98</td>
+            <td><a href="user/254.html">Хрусталев Арсений</a> (Pilatus)</td>
+              <td>KanRonavirus</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-44600</span></td>
+            <td>2.8571</td>
+            <td>-6371</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>99</td>
+            <td><a href="user/451.html">Калинин Иван</a> (KCat)</td>
+              <td>Северные каталы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-46200</span></td>
+            <td>3</td>
+            <td>-6600</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>100</td>
+            <td><a href="user/313.html">Вышиванная Оксана</a> (天狗)</td>
+              <td>Тайл силы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-48600</span></td>
+            <td>2.7143</td>
+            <td>-6943</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>101</td>
+            <td><a href="user/937.html">Будковский Сергей</a> (KiR)</td>
+              <td>Пин4айки</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-60800</span></td>
+            <td>2.8571</td>
+            <td>-8686</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>102</td>
+            <td><a href="user/27.html">Федоркевич Антон</a> ()</td>
+              <td>ПМС</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-60900</span></td>
+            <td>2.5714</td>
+            <td>-8700</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>103</td>
+            <td><a href="user/1776.html">Иванов Максим</a> (heat不me)</td>
+              <td>Горе от UMA</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-62100</span></td>
+            <td>3</td>
+            <td>-8871</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>104</td>
+            <td><a href="user/382.html">Пенкин Кирилл</a> (supekisa)</td>
+              <td>Избранные наркоманы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-63200</span></td>
+            <td>3</td>
+            <td>-9029</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>105</td>
+            <td><a href="user/1767.html">Лаврук Елена</a> (LeroLero)</td>
+              <td>Суанко в тапках</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-66200</span></td>
+            <td>2.8571</td>
+            <td>-9457</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>106</td>
+            <td><a href="user/927.html">Jasper Germeys</a> (原外桃)</td>
+              <td>Team</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-71900</span></td>
+            <td>2.8571</td>
+            <td>-10271</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>107</td>
+            <td><a href="user/1646.html">Дружинин Денис</a> (denTree)</td>
+              <td>Reversed chun</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-72800</span></td>
+            <td>2.8571</td>
+            <td>-10400</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>108</td>
+            <td><a href="user/326.html">Игрок замены 1</a> ()</td>
+              <td>RAMM_TAIM</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-76300</span></td>
+            <td>2.7143</td>
+            <td>-10900</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>109</td>
+            <td><a href="user/1149.html">Шустрова Ксения</a> (だまてんですか。)</td>
+              <td>Якухайные ведьмы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-77800</span></td>
+            <td>3</td>
+            <td>-11114</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>110</td>
+            <td><a href="user/1773.html">G Demps</a> (Curse696)</td>
+              <td>doukou wa doko</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-78900</span></td>
+            <td>2.7143</td>
+            <td>-11271</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>111</td>
+            <td><a href="user/298.html">Логинова Юлия</a> (yulkolog)</td>
+              <td>Team</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-78900</span></td>
+            <td>2.7143</td>
+            <td>-11271</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>112</td>
+            <td><a href="user/1644.html">Братцев Михаил</a> (mottwww)</td>
+              <td>Красная Семёрка Пин</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-80900</span></td>
+            <td>2.8571</td>
+            <td>-11557</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>113</td>
+            <td><a href="user/103.html">Случик Дмитрий</a> (Madchen)</td>
+              <td>Котик хочет тамяо 3 доррры</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-82800</span></td>
+            <td>3</td>
+            <td>-11829</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>114</td>
+            <td><a href="user/733.html">Денисов Евгений</a> (Gato71)</td>
+              <td>Красная Семёрка Пин</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-83300</span></td>
+            <td>3</td>
+            <td>-11900</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>115</td>
+            <td><a href="user/667.html">Цывинский Сергей</a> (MyZ4iHa)</td>
+              <td>Сутулые пёсики Suiken'a</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-87200</span></td>
+            <td>3.1429</td>
+            <td>-12457</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>116</td>
+            <td><a href="user/1041.html">Горошенко Михаил</a> (Ivory)</td>
+              <td>Четкий Байман</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-87500</span></td>
+            <td>2.8571</td>
+            <td>-12500</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>117</td>
+            <td><a href="user/1643.html">Бахтин Алексей</a> (Hanomir)</td>
+              <td>Северные каталы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-88700</span></td>
+            <td>3.1429</td>
+            <td>-12671</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>118</td>
+            <td><a href="user/13.html">Санжаров Роман</a> (-ラバック-)</td>
+              <td>ПМС</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-90600</span></td>
+            <td>2.8571</td>
+            <td>-12943</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>119</td>
+            <td><a href="user/1130.html">Вовненко Григорий</a> (イリーズ)</td>
+              <td>三麻人</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-96500</span></td>
+            <td>3.1429</td>
+            <td>-13786</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>120</td>
+            <td><a href="user/290.html">Петрущенко Сергей</a> (ドランク玄人)</td>
+              <td>Отчаянные канорезы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-99300</span></td>
+            <td>3.1429</td>
+            <td>-14186</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>121</td>
+            <td><a href="user/259.html">Свиридова Валентина</a> (Helli)</td>
+              <td>Отчаянные канорезы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-102200</span></td>
+            <td>3</td>
+            <td>-14600</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>122</td>
+            <td><a href="user/466.html">Кокорин Денис</a> (Denko)</td>
+              <td>КанЕдиницСоу</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-104500</span></td>
+            <td>3</td>
+            <td>-14929</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>123</td>
+            <td><a href="user/1679.html">Алейнов Вячеслав</a> (DarkMark)</td>
+              <td>Суанко в тапках</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-105700</span></td>
+            <td>3.1429</td>
+            <td>-15100</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>124</td>
+            <td><a href="user/957.html">Белозуб Владимир</a> (Tousaka)</td>
+              <td>Пин4айки</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-109800</span></td>
+            <td>3.2857</td>
+            <td>-15686</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>125</td>
+            <td><a href="user/879.html">Зыкова Софья</a> (ズー)</td>
+              <td>三麻人</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-114500</span></td>
+            <td>2.8571</td>
+            <td>-16357</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>126</td>
+            <td><a href="user/1037.html">Бе Александр</a> (BYS)</td>
+              <td>Пин4айки</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-120200</span></td>
+            <td>3.1429</td>
+            <td>-17171</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>127</td>
+            <td><a href="user/857.html">Игуменшева Елена</a> (ありさ＿７７７)</td>
+              <td>Якухайные ведьмы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-122600</span></td>
+            <td>3.1429</td>
+            <td>-17514</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>128</td>
+            <td><a href="user/1574.html">Шатохин Данило</a> (lil_arey)</td>
+              <td>Горе от UMA</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-126700</span></td>
+            <td>3.1429</td>
+            <td>-18100</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>129</td>
+            <td><a href="user/258.html">Андрющенко Дмитрий</a> (yakuman)</td>
+              <td>KanRonavirus</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-128900</span></td>
+            <td>3.2857</td>
+            <td>-18414</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>130</td>
+            <td><a href="user/1756.html">Toulcanon Gabriel</a> (Nyachane)</td>
+              <td>RUN for your life</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-130600</span></td>
+            <td>3.1429</td>
+            <td>-18657</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>131</td>
+            <td><a href="user/573.html">Кунцова Анна</a> (Calico)</td>
+              <td>Якухайные ведьмы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-130800</span></td>
+            <td>3.1429</td>
+            <td>-18686</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>132</td>
+            <td><a href="user/756.html">Рожкова Анастасия</a> (Chucha)</td>
+              <td>Отчаянные канорезы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-138600</span></td>
+            <td>3.1429</td>
+            <td>-19800</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>133</td>
+            <td><a href="user/1774.html">Mizhquiri Jeffrey</a> (Ronnyron)</td>
+              <td>doukou wa doko</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-150200</span></td>
+            <td>3</td>
+            <td>-21457</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>134</td>
+            <td><a href="user/235.html">Алексеева Ольга</a> (NoNamed)</td>
+              <td>Это не было ошибкой</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-151500</span></td>
+            <td>3.2857</td>
+            <td>-21643</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>135</td>
+            <td><a href="user/1568.html">Беспрозванных Иван</a> (Miryanin)</td>
+              <td>Северные каталы</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-154500</span></td>
+            <td>3.2857</td>
+            <td>-22071</td>
+            <td>7</td>
+        </tr>
+        <tr class="">
+            <td>136</td>
+            <td><a href="user/500.html">Варанкин Владимир</a> (Varrra)</td>
+              <td>КанЕдиницСоу</td>
+            <td><span class="badge
+                
+                badge-danger
+            ">-190500</span></td>
+            <td>3.5714</td>
+            <td>-27214</td>
+            <td>7</td>
+        </tr>
+    </table>
+
+</div>
+
+<script type="text/javascript" src="../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>

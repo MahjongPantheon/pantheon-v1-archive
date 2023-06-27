@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Таймер - Rheda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <script type="text/javascript" src="../assets/js/jquery.js?4f252523d4af0b478c810c2547a63e19"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css?d59729439a203fc474f5677b8d18d8bb">
+    <link rel="stylesheet" type="text/css" href="../assets/styles.css?29b3cd79aa54bcad1dc09a5438c3130f">
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery.jqplot.min.css?831414b83f81dd33ec69c23df6f2c88b">
+
+    <!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(64317202,"init",{id:64317202,clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="../watch/64317202" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
+
+    <link rel="shortcut icon" href="../assets/ico/rhedaico.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/rhedahires.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-brand">
+        <a href="../eid186.html" class="nav-link">Весенний шантен 2019</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="last.html" class="nav-link">Последние игры</a></li>
+            <li class="nav-item"><a href="stat.html" class="nav-link">Рейтинг</a></li>
+                    <li class="nav-item"><a href="timer.html" target="_blank" class="nav-link">Таймер и рассадка</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <style type="text/css">
+    span.success {
+        color: #393;
+    }
+
+    span.fail {
+        color: #c44;
+    }
+
+    .navbar-inner {
+        display: none;
+    }
+
+    .timer, .timer > * {
+        font-size: 300px;
+        font-family: monospace;
+        font-weight: bold;
+        margin-top: 200px;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .timer.mini, .timer.mini > * {
+        font-size: 100px;
+        margin-top: 0;
+    }
+</style>
+
+<script type="text/javascript">
+    !function () {
+        var soundBeforeEnd = new Audio("/assets/5min.wav"); // buffers automatically when created
+        var soundOnEnd = new Audio("/assets/endgame.wav"); // buffers automatically when created
+        var initialTime = '00:00'.split(':');
+        var minutes = parseInt(initialTime[0]);
+        var seconds = parseInt(initialTime[1]) / 10;
+        var redZone = '' === '1';
+        var yellowZone = '1' === '1';
+        var waiting = '';
+        var timer;
+
+        $(function () {
+            runTimer();
+            if (minutes <= 0 || (!minutes && !seconds)) {
+                $('.timer').addClass('mini');
+                $('.seating').show();
+            }
+            timer = window.setInterval(runTimer, 10000);
+        });
+
+        function formatTime(minutes, seconds) {
+            var addedZero = '';
+            if (seconds < 1) {
+                addedZero = '0';
+            }
+            return minutes + ':' + addedZero + seconds * 10;
+        }
+
+        function checkRedZone(minutes) {
+            if (redZone && minutes < 0) {
+                $('#time').css({color: '#f55'});
+                if (soundBeforeEnd) {
+                    soundBeforeEnd.play();
+                    soundBeforeEnd = false; // play the sound only once
+                }
+            }
+        }
+
+        function checkYellowZone(minutes) {
+            if (yellowZone && minutes < 15) {
+                $('#time').css({backgroundColor: '#ff5'});
+                if (soundBeforeEnd) {
+                    soundBeforeEnd.play();
+                    soundBeforeEnd = false; // play the sound only once
+                }
+            }
+        }
+
+        function checkSeating(minutes) {
+            if (minutes >= (85) ) {
+                $('.timer').addClass('mini');
+                $('.seating').show();
+            } else {
+                $('.timer').removeClass('mini');
+                $('.seating').hide();
+            }
+        }
+
+        function stopTimer() {
+            window.clearInterval(timer);
+            $('#time').html('СТОП!');
+            $('.timer').addClass('mini');
+            $('.seating').show();
+
+            if (soundOnEnd) {
+                soundOnEnd.play();
+                soundOnEnd = false; // play the sound only once
+            }
+        }
+
+        function runTimer() {
+            if (waiting) {
+                return;
+            }
+
+            if (seconds === 0) {
+                minutes--;
+                seconds = 6; // just in case
+            }
+
+            seconds--;
+            checkRedZone(minutes);
+            checkYellowZone(minutes);
+
+            if (minutes < 0) {
+                stopTimer();
+            } else {
+                $('#time').html(formatTime(minutes, seconds));
+            }
+
+            checkSeating(minutes);
+        }
+    }();
+</script>
+
+        <div class="timer">
+            <span id="time">00:00</span>
+        </div>
+    <div class="seating">
+        <hr>
+        <h3>РАССАДКА</h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>Стол №</th>
+                <th>ВОСТОК</th>
+                <th>ЮГ</th>
+                <th>ЗАПАД</th>
+                <th>СЕВЕР</th>
+            </tr>
+                <tr>
+                    <td>1</td>
+                        <td>Алексеева Ольга <span class="badge badge-success">158100</span></td>
+                        <td>Поляков Кирилл <span class="badge badge-success">115000</span></td>
+                        <td>Шатрова Валерия <span class="badge badge-success">85600</span></td>
+                        <td>Максимовский Василий <span class="badge badge-success">176100</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                        <td>Ермолаев Андрей <span class="badge badge-success">25900</span></td>
+                        <td>Ускова Наталья <span class="badge badge-success">108700</span></td>
+                        <td>Пух Максим <span class="badge badge-success">76900</span></td>
+                        <td>Богачев Павел <span class="badge badge-success">68200</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                        <td>Марусима Акира <span class="badge badge-danger">-7800</span></td>
+                        <td>Ермолаев Алексей <span class="badge badge-success">89300</span></td>
+                        <td>Дементьева Светлана <span class="badge badge-success">50500</span></td>
+                        <td>Ильина Дарья <span class="badge badge-success">27100</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                        <td>Бондарев Александр <span class="badge badge-success">36200</span></td>
+                        <td>Лисихин Алексей <span class="badge badge-danger">-20100</span></td>
+                        <td>Новиков Дмитрий <span class="badge badge-success">1000</span></td>
+                        <td>Дикунец Мария <span class="badge badge-success">5400</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                        <td>Стрелков Павел <span class="badge badge-danger">-55100</span></td>
+                        <td>Проскурякова Ольга <span class="badge badge-danger">-15600</span></td>
+                        <td>Язев Алексей <span class="badge badge-success">5400</span></td>
+                        <td>Заякин Владимир <span class="badge badge-danger">-57000</span></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                        <td>Афонин Михаил <span class="badge badge-danger">-67500</span></td>
+                        <td>Николаев Леон <span class="badge badge-danger">-67700</span></td>
+                        <td>Рожкова Анастасия <span class="badge badge-danger">-27400</span></td>
+                        <td>Сорокин Павел <span class="badge badge-danger">-105400</span></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                        <td>Судоплатова Елена <span class="badge badge-danger">-151600</span></td>
+                        <td>Санжаров Роман <span class="badge badge-danger">-104000</span></td>
+                        <td>Усманов Рамиль <span class="badge badge-danger">-202500</span></td>
+                        <td>Елшанкин Андрей <span class="badge badge-danger">-179800</span></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                        <td>Бухаринов Дмитрий <span class="badge badge-success">112700</span></td>
+                        <td>Плясунов Владислав <span class="badge badge-success">118300</span></td>
+                        <td>Богданов Владимир <span class="badge badge-success">113700</span></td>
+                        <td>Колпаков Денис <span class="badge badge-success">158200</span></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                        <td>Махов Кирилл <span class="badge badge-success">74900</span></td>
+                        <td>Соляков Павел <span class="badge badge-success">90800</span></td>
+                        <td>Карпов Александр <span class="badge badge-success">21700</span></td>
+                        <td>Тимофеев Валентин <span class="badge badge-success">83400</span></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                        <td>Капгер Галина <span class="badge badge-success">55600</span></td>
+                        <td>Мишаков Дмитрий <span class="badge badge-success">18400</span></td>
+                        <td>Дмитриев Дмитрий <span class="badge badge-success">43100</span></td>
+                        <td>Зарубин Сергей <span class="badge badge-success">30600</span></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                        <td>Ткаченко Иван <span class="badge badge-danger">-28600</span></td>
+                        <td>Федоркевич Антон <span class="badge badge-danger">-40200</span></td>
+                        <td>Ившин Сергей <span class="badge badge-success">50500</span></td>
+                        <td>Монаков Илья <span class="badge badge-success">12000</span></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                        <td>Лисихина Людмила <span class="badge badge-danger">-7500</span></td>
+                        <td>Курмаев Ренат <span class="badge badge-danger">-38300</span></td>
+                        <td>Кузнецов Антон <span class="badge badge-danger">-46500</span></td>
+                        <td>Вышиванная Оксана <span class="badge badge-danger">-49900</span></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                        <td>Клименко Олег <span class="badge badge-danger">-63900</span></td>
+                        <td>Титова Елена <span class="badge badge-danger">-28600</span></td>
+                        <td>Киселев Максим <span class="badge badge-danger">-118400</span></td>
+                        <td>Еремкина Мария <span class="badge badge-danger">-79900</span></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                        <td>Мышкин Никита <span class="badge badge-danger">-85000</span></td>
+                        <td>Лемякина Дарья <span class="badge badge-danger">-164800</span></td>
+                        <td>Семаков Станислав <span class="badge badge-danger">-171200</span></td>
+                        <td>Поносов Никита <span class="badge badge-danger">-287800</span></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                        <td>Ким София <span class="badge badge-success">105400</span></td>
+                        <td>Гончаренко Александр <span class="badge badge-success">130500</span></td>
+                        <td>Козловская Яна <span class="badge badge-success">130800</span></td>
+                        <td>Янц Александра <span class="badge badge-success">82800</span></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                        <td>Гришин Виктор <span class="badge badge-success">89800</span></td>
+                        <td>Матвеева Алена <span class="badge badge-success">58600</span></td>
+                        <td>Жучков Никита <span class="badge badge-success">42300</span></td>
+                        <td>Ким Валерия <span class="badge badge-success">64300</span></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                        <td>Сироткин Дмитрий <span class="badge badge-success">4300</span></td>
+                        <td>Алешин Сергей <span class="badge badge-success">38900</span></td>
+                        <td>Рогозин Леонид <span class="badge badge-success">27400</span></td>
+                        <td>Мишакова Любовь <span class="badge badge-success">66800</span></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                        <td>Косолапов Никита <span class="badge badge-danger">-22700</span></td>
+                        <td>Яковлев Андрей <span class="badge badge-success">33000</span></td>
+                        <td>Антропов Андрей <span class="badge badge-danger">-16900</span></td>
+                        <td>Гладышев Сергей <span class="badge badge-success">15000</span></td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                        <td>Лебедева Елена <span class="badge badge-danger">-58100</span></td>
+                        <td>Калинин Иван <span class="badge badge-danger">-28200</span></td>
+                        <td>Ким Олег <span class="badge badge-danger">-73300</span></td>
+                        <td>Бердников Александр <span class="badge badge-success">9000</span></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                        <td>Решетняк Анна <span class="badge badge-danger">-47000</span></td>
+                        <td>Аксенова Вероника <span class="badge badge-danger">-94900</span></td>
+                        <td>Жумабаева Наталья <span class="badge badge-danger">-88400</span></td>
+                        <td>Ли Дмитрий <span class="badge badge-danger">-68400</span></td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                        <td>Андрейчиков Денис <span class="badge badge-danger">-337000</span></td>
+                        <td>Зарезин Иван <span class="badge badge-danger">-159100</span></td>
+                        <td>Петрущенко Сергей <span class="badge badge-danger">-168400</span></td>
+                        <td>Бычкова Нина <span class="badge badge-danger">-92100</span></td>
+                </tr>
+        </table>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../assets/js/bootstrap.bundle.js?6866f102282d95443edf73ca112b117b"></script>
+<script type="text/javascript" src="../assets/js/jquery.jqplot.min.js?490436e91b14521358b4b41861ea30e6"></script>
+<script type="text/javascript" src="../assets/js/jqplot.categoryAxisRenderer.min.js?58133c019af153221cfc971192650d40"></script>
+<script type="text/javascript" src="../assets/js/jqplot.barRenderer.min.js?c58d86a05aa91b70921814d09e6de676"></script>
+<script type="text/javascript" src="../assets/js/jqplot.highlighter.js?10c8805c8aef46ba95bf0fdeee0df2e2"></script>
+<script type="text/javascript" src="../assets/js/jqplot.cursor.js?e9d25e2860d993c0e2ee58ffe93e98f6"></script>
+<script type="text/javascript" src="../assets/bundle.js?011fea3a4318df4418f804054419c9b4"></script>
+
+</body>
+</html>
